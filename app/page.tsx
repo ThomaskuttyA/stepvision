@@ -15,27 +15,62 @@ const fadeUp = {
     transition: { duration: 0.5 }
 }
 
-const heroImages = [
-    '/images/covers/heavy-equipment-machinery.jpg',
-    '/images/covers/building-materials-hardware.jpg',
-    '/images/covers/marine-equipment.jpg',
-    '/images/covers/automotive-spare-parts.jpg',
-    '/images/covers/electrical-electronics.jpg',
-    '/images/covers/hotel-industry-supplies.jpg',
-    '/images/covers/it-office-products.jpg',
-    '/images/covers/stationery-general-supplies.jpg'
+const heroSlides = [
+    {
+        image: '/images/covers/heavy-equipment-machinery.jpg',
+        title: 'One stop solution for Hotel supplies and Engineering Products',
+        description: 'Your premium gateway for global trade from UAE to Africa.'
+    },
+    {
+        image: '/images/covers/building-materials-hardware.jpg',
+        title: 'Quality Building Materials & Hardware',
+        description: 'Superior construction supplies for large-scale infrastructure projects.'
+    },
+    {
+        image: '/images/covers/marine-equipment.jpg',
+        title: 'Advanced Marine & Offshore Equipment',
+        description: 'Reliable maritime solutions for international shipping and offshore operations.'
+    },
+    {
+        image: '/images/covers/automotive-spare-parts.jpg',
+        title: 'Genuine Automotive Spare Parts',
+        description: 'Comprehensive range of high-quality components for all vehicle types.'
+    },
+    {
+        image: '/images/covers/electrical-electronics.jpg',
+        title: 'Industrial Electrical & Electronics',
+        description: 'Cutting-edge technology and robust electrical systems for industrial use.'
+    },
+    {
+        image: '/images/covers/hotel-industry-supplies.jpg',
+        title: 'Premium Hotel Industry Supplies',
+        description: 'Everything you need to run a world-class hospitality business.'
+    },
+    {
+        image: '/images/covers/it-office-products.jpg',
+        title: 'Modern IT & Office Products',
+        description: 'Smart solutions for the digital workplace and corporate efficiency.'
+    },
+    {
+        image: '/images/covers/stationery-general-supplies.jpg',
+        title: 'Stationery & General Supplies',
+        description: 'Daily essentials and specialized tools for every business sector.'
+    }
 ]
 
 export default function HomePage() {
-    const [currentImage, setCurrentImage] = useState(0)
+    const [currentSlide, setCurrentSlide] = useState(0)
     const [activeCategory, setActiveCategory] = useState(products[0].slug)
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentImage((prev) => (prev + 1) % heroImages.length)
-        }, 5000)
+            setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+        }, 6000)
         return () => clearInterval(timer)
     }, [])
+
+    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
 
     return (
         <div className="pt-16 lg:pt-20">
@@ -45,9 +80,9 @@ export default function HomePage() {
                 <div className="absolute inset-0 z-0">
                     <AnimatePresence mode="wait">
                         <motion.img
-                            key={currentImage}
-                            src={heroImages[currentImage]}
-                            alt="Global Trade Background"
+                            key={currentSlide}
+                            src={heroSlides[currentSlide].image}
+                            alt={heroSlides[currentSlide].title}
                             className="absolute inset-0 w-full h-full object-cover"
                             initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -55,75 +90,66 @@ export default function HomePage() {
                             transition={{ duration: 1.5, ease: "easeInOut" }}
                         />
                     </AnimatePresence>
-                    <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/70 to-primary/60 z-10" />
+                    <div className="absolute inset-0 bg-black/50 z-10" />
                 </div>
 
-                {/* Animated background elements */}
-                <div className="absolute inset-0 z-0 overflow-hidden">
-                    <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-                </div>
-
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                    <motion.div
-                        className="max-w-3xl"
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.7 }}
-                    >
-                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-                            <Globe className="w-4 h-4 text-gold" />
-                            <span className="text-white/90 text-sm font-medium">UAE-Based Export Specialists</span>
-                        </div>
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 leading-tight">
-                            Your Trusted Gateway for{' '}
-                            <span className="text-gold">Global Trade</span>
-                            <br />from UAE to Africa
-                        </h1>
-                        <p className="text-white/80 text-base sm:text-lg mb-10 leading-relaxed max-w-xl">
-                            We supply industrial, commercial, and consumer products across 8 major categories — from building materials and heavy machinery to electronics and hospitality supplies.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/products" className="btn-gold text-base px-8 py-4 shadow-xl">
-                                Explore Our Products <ArrowRight className="w-5 h-5" />
-                            </Link>
-                            <Link href="/contact" className="btn-outline text-base px-8 py-4">
-                                Get a Quote
-                            </Link>
-                        </div>
-                    </motion.div>
-
-                    {/* Stats */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.4 }}
-                        className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 w-full"
-                    >
-                        {[
-                            { value: '100+', label: 'Product Categories' },
-                            { value: '20+', label: 'African Markets' },
-                            { value: '100%', label: 'Export Compliant' },
-                            { value: '24h', label: 'Quote Response' },
-                        ].map((stat) => (
-                            <div key={stat.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-                                <div className="text-2xl font-bold text-gold">{stat.value}</div>
-                                <div className="text-white/70 text-xs mt-1">{stat.label}</div>
+                <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentSlide}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -30 }}
+                            transition={{ duration: 0.7 }}
+                            className="flex flex-col items-center"
+                        >
+                            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-5xl">
+                                {heroSlides[currentSlide].title}
+                            </h1>
+                            <p className="text-white/90 text-lg sm:text-xl mb-10 leading-relaxed max-w-2xl">
+                                {heroSlides[currentSlide].description}
+                            </p>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <Link href="/products" className="btn-gold text-base px-10 py-4 shadow-2xl hover:scale-105 transition-transform rounded-xl">
+                                    View Products <ArrowRight className="w-5 h-5" />
+                                </Link>
+                                <Link href="/contact" className="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold hover:bg-white/20 transition-all rounded-xl">
+                                    Contact Us
+                                </Link>
                             </div>
-                        ))}
-                    </motion.div>
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
 
-                {/* Scroll indicator */}
-                <motion.div
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                    <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center pt-2">
-                        <div className="w-1.5 h-3 bg-white/60 rounded-full" />
-                    </div>
-                </motion.div>
+                {/* Slider Controls */}
+                <div className="absolute inset-0 z-30 flex items-center justify-between px-4 sm:px-8 pointer-events-none">
+                    <button
+                        onClick={prevSlide}
+                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all pointer-events-auto group"
+                        aria-label="Previous slide"
+                    >
+                        <ArrowRight className="w-6 h-6 text-white rotate-180 group-hover:-translate-x-1 transition-transform" />
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all pointer-events-auto group"
+                        aria-label="Next slide"
+                    >
+                        <ArrowRight className="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" />
+                    </button>
+                </div>
+
+                {/* Pagination Dots */}
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+                    {heroSlides.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`h-1.5 transition-all duration-300 rounded-full ${currentSlide === index ? 'w-8 bg-gold' : 'w-3 bg-white/30 hover:bg-white/50'}`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
             </section>
 
             {/* Trust Bar */}
@@ -219,27 +245,27 @@ export default function HomePage() {
 
                     {/* Modern Category Tabs */}
                     <div className="mb-16 flex justify-center">
-                        <div className="inline-flex p-1 bg-gray-100 rounded-2xl overflow-x-auto no-scrollbar max-w-full">
+                        <div className="inline-flex p-1.5 bg-white/50 backdrop-blur-md rounded-2xl border border-gray-200 shadow-sm overflow-x-auto no-scrollbar max-w-full">
                             <div className="flex gap-1 min-w-max">
                                 {products.map((cat) => (
-                                    <button
+                                    <motion.button
                                         key={cat.slug}
                                         onClick={() => setActiveCategory(cat.slug)}
-                                        className={`relative flex items-center gap-2 px-5 py-2 rounded-xl transition-all duration-300 text-sm font-bold whitespace-nowrap z-10 ${activeCategory === cat.slug
-                                                ? 'text-white'
-                                                : 'text-navy/60 hover:text-navy hover:bg-gray-100'
+                                        whileTap={{ scale: 0.95 }}
+                                        className={`relative flex items-center justify-center px-6 py-2.5 rounded-xl transition-all duration-300 text-sm font-semibold whitespace-nowrap z-10 ${activeCategory === cat.slug
+                                            ? 'text-white'
+                                            : 'text-navy/60 hover:text-navy hover:bg-gray-100/50'
                                             }`}
                                     >
-                                        <span className="text-lg">{cat.icon}</span>
                                         {cat.name}
                                         {activeCategory === cat.slug && (
                                             <motion.div
                                                 layoutId="activeTab"
-                                                className="absolute inset-0 bg-navy rounded-xl -z-10 shadow-sm"
+                                                className="absolute inset-0 bg-navy rounded-xl -z-10 shadow-md"
                                                 transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
                                             />
                                         )}
-                                    </button>
+                                    </motion.button>
                                 ))}
                             </div>
                         </div>
