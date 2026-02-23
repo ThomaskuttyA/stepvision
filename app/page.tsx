@@ -14,6 +14,7 @@ const fadeUp = {
     viewport: { once: true },
     transition: { duration: 0.5 }
 }
+//dheh
 
 const heroSlides = [
     {
