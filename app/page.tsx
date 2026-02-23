@@ -24,7 +24,7 @@ const heroSlides = [
     },
     {
         image: '/images/covers/building-materials-hardware.jpg',
-        title: 'Quality Building Materials & Hardware',
+        title: 'Quality On Demand Building Materials & Hardware',
         description: 'Superior construction supplies for large-scale infrastructure projects.'
     },
     {
