@@ -10,20 +10,16 @@ export const products = [
                 name: "Steel Bars",
                 items: [
                     { name: "Mild steel bars" },
-                    { name: "Deformed bars" },
-                    { name: "Structural steel sections" },
-                    { name: "Flat Bars", image: "/images/products/building-materials-hardware/steel-bars/flat-bars.jpg" },
                     { name: "Reinforcement Bar", image: "/images/products/building-materials-hardware/steel-bars/reinforcement-bar.jpg" },
-                    { name: "Serrated Bars", image: "/images/products/building-materials-hardware/steel-bars/serrated-bars.jpg" }
+                    { name: "Serrated Bars", image: "/images/products/building-materials-hardware/steel-bars/serrated-bars.jpg" },
+                    { name: "Flat Bars", image: "/images/products/building-materials-hardware/steel-bars/flat-bars.jpg" }
                 ]
             },
             {
                 name: "Wood",
                 items: [
-                    { name: "Timber" },
-                    { name: "Plywood" },
-                    { name: "MDF boards" },
-                    { name: "Hardwood" },
+                    { name: "White Wood" },
+                    { name: "Plywood (Bendy, Birch, Commercial, Film faced, Veneer)" },
                     { name: "Moisture Resistant MDF", image: "/images/products/building-materials-hardware/wood/moisture-resistant-mdf.jpg" },
                     { name: "Solid Core Chip Board", image: "/images/products/building-materials-hardware/wood/solid-core-chip-board.jpg" }
                 ]
@@ -31,15 +27,21 @@ export const products = [
             {
                 name: "Metals",
                 items: [
-                    { name: "Aluminum sections" },
-                    { name: "GI pipes" },
-                    { name: "Copper pipes" },
+                    { name: "Aluminum Sections" },
+                    { name: "Rectangular Hollow Section (RHS)" },
+                    { name: "Aluminium Sheets" },
+                    { name: "GI Pipes" },
+                    { name: "Copper Pipe/Tube" },
                     { name: "Metal sheets" }
                 ]
             },
             {
                 name: "Paints",
                 items: [
+                    { name: "Jotun Fenomastic My Home Smooth Silk Base A" },
+                    { name: "Jotun Penguard Topcoat" },
+                    { name: "National Paints PVA Primer White" },
+                    { name: "Berger Weathercoat Anti Dustt" },
                     { name: "Interior paints" },
                     { name: "Exterior paints" },
                     { name: "Industrial coatings" },
@@ -53,11 +55,8 @@ export const products = [
             {
                 name: "Construction Products",
                 items: [
-                    { name: "Cement" },
-                    { name: "Sand & aggregates" },
                     { name: "Waterproofing materials" },
-                    { name: "Adhesives & sealants" },
-                    { name: "Cement Masonry", image: "/images/products/building-materials-hardware/construction-products/cement-masonry.jpg" }
+                    { name: "Adhesives & sealants" }
                 ]
             },
             {

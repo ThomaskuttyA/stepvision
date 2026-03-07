@@ -18,44 +18,34 @@ const fadeUp = {
 
 const heroSlides = [
     {
+        image: '/images/covers/global-trade.png',
+        title: <>Your <span className="text-gold">Trusted Gateway</span> for Global Trade from <span className="text-gold">UAE to Africa</span></>,
+        titleAlt: 'Your Trusted Gateway for Global Trade from UAE to Africa',
+        description: 'Comprehensive supply chain solutions for industrial, commercial, and consumer products.'
+    },
+    {
         image: '/images/covers/heavy-equipment-machinery.jpg',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        title: <>One stop solution for <span className="text-gold">Hotel supplies</span> and <span className="text-gold">Engineering Products</span></>,
+        titleAlt: 'One stop solution for Hotel supplies and Engineering Products',
+        description: 'Premium quality equipment and supplies for hospitality and technical sectors.'
     },
     {
-        image: '/images/covers/building-materials-hardware.jpg',
-        title: 'Quality On Demand Building Materials & Hardware',
-        description: 'Superior construction supplies for large-scale infrastructure projects.'
-    },
-    {
-        image: '/images/covers/marine-equipment.jpg',
-        title: 'Advanced Marine & Offshore Equipment',
-        description: 'Reliable maritime solutions for international shipping and offshore operations.'
-    },
-    {
-        image: '/images/covers/automotive-spare-parts.jpg',
-        title: 'Genuine Automotive Spare Parts',
-        description: 'Comprehensive range of high-quality components for all vehicle types.'
-    },
-    {
-        image: '/images/covers/electrical-electronics.jpg',
-        title: 'Industrial Electrical & Electronics',
-        description: 'Cutting-edge technology and robust electrical systems for industrial use.'
-    },
-    {
-        image: '/images/covers/hotel-industry-supplies.jpg',
-        title: 'Premium Hotel Industry Supplies',
-        description: 'Everything you need to run a world-class hospitality business.'
+        image: '/images/covers/industrial-solutions.png',
+        title: <>Comprehensive <span className="text-gold">Building, Automotive</span> & <span className="text-gold">Electrical</span> Solutions</>,
+        titleAlt: 'Comprehensive Building, Automotive & Electrical Solutions',
+        description: 'High-quality materials, parts, and systems for diverse industrial sectors.'
     },
     {
         image: '/images/covers/it-office-products.jpg',
-        title: 'Modern IT & Office Products',
-        description: 'Smart solutions for the digital workplace and corporate efficiency.'
+        title: <>Modern <span className="text-gold">IT, Office</span> & <span className="text-gold">General Supplies</span></>,
+        titleAlt: 'Modern IT, Office & General Supplies',
+        description: 'Smart solutions and daily essentials for every business sector.'
     },
     {
-        image: '/images/covers/stationery-general-supplies.jpg',
-        title: 'Stationery & General Supplies',
-        description: 'Daily essentials and specialized tools for every business sector.'
+        image: '/images/covers/yacht-repair.png',
+        title: <>Specialized <span className="text-gold">Yacht Repair</span> & <span className="text-gold">Marine Manufacturing</span></>,
+        titleAlt: 'Specialized Yacht Repair & Marine Manufacturing',
+        description: 'Expert maritime services and premium equipment for the yachting industry.'
     }
 ]
 
@@ -83,7 +73,7 @@ export default function HomePage() {
                         <motion.img
                             key={currentSlide}
                             src={heroSlides[currentSlide].image}
-                            alt={heroSlides[currentSlide].title}
+                            alt={heroSlides[currentSlide].titleAlt}
                             className="absolute inset-0 w-full h-full object-cover"
                             initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -160,7 +150,7 @@ export default function HomePage() {
                         {[
                             { icon: <Globe className="w-6 h-6" />, title: 'UAE-Based Export Specialists', desc: 'Operating from UAE Free Zone with full export capabilities' },
                             { icon: <Truck className="w-6 h-6" />, title: 'Reliable Supply Chain to Africa', desc: 'Established logistics network across 20+ African countries' },
-                            { icon: <Package className="w-6 h-6" />, title: 'Wide Range of Industrial Products', desc: 'Over 8 major categories covering all your sourcing needs' },
+                            { icon: <Package className="w-6 h-6" />, title: 'Wide Range of Industrial Products', desc: 'Comprehensive supply solutions covering all your sourcing needs' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
