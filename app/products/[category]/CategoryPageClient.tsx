@@ -84,7 +84,7 @@ export default function CategoryPageClient({ product }: CategoryPageClientProps)
                                             )}
                                             <div className="pt-1">
                                                 <p className="text-gray-700 font-medium text-sm leading-tight">{item.name}</p>
-                                                <p className="text-xs text-gray-400 mt-0.5">Available for export</p>
+                                                <p className="text-xs text-gray-500 mt-0.5">{item.description || "Available for export"}</p>
                                             </div>
                                         </li>
                                     ))}

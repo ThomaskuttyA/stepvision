@@ -24,22 +24,28 @@ const heroSlides = [
         description: 'Comprehensive supply chain solutions for industrial, commercial, and consumer products.'
     },
     {
-        image: '/images/covers/heavy-equipment-machinery.jpg',
-        title: <>One stop solution for <span className="text-gold">Hotel supplies</span> and <span className="text-gold">Engineering Products</span></>,
-        titleAlt: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Premium quality equipment and supplies for hospitality and technical sectors.'
+        image: '/images/covers/combined-categories.png',
+        title: <>Leading Supplier of <span className="text-gold">Building, Heavy Equipment</span>, Automotive & <span className="text-gold">Marine Products</span></>,
+        titleAlt: 'Leading Supplier of Building, Heavy Equipment, Automotive & Marine Products',
+        description: 'Your one-stop destination for high-quality industrial and engineering solutions.'
     },
     {
-        image: '/images/covers/industrial-solutions.png',
-        title: <>Comprehensive <span className="text-gold">Building, Automotive</span> & <span className="text-gold">Electrical</span> Solutions</>,
-        titleAlt: 'Comprehensive Building, Automotive & Electrical Solutions',
-        description: 'High-quality materials, parts, and systems for diverse industrial sectors.'
+        image: '/images/covers/hotel-industry-supplies.jpg',
+        title: <>One-stop solution for <span className="text-gold">Hotel supplies</span> and <span className="text-gold">Engineering Products</span></>,
+        titleAlt: 'One-stop solution for Hotel supplies and Engineering Products',
+        description: 'Premium quality equipment and supplies for hospitality and technical sectors.'
     },
     {
         image: '/images/covers/it-office-products.jpg',
         title: <>Modern <span className="text-gold">IT, Office</span> & <span className="text-gold">General Supplies</span></>,
         titleAlt: 'Modern IT, Office & General Supplies',
         description: 'Smart solutions and daily essentials for every business sector.'
+    },
+    {
+        image: '/images/covers/global-trade.png',
+        title: <>International <span className="text-gold">Logistics</span> from <span className="text-gold">UAE to Africa</span></>,
+        titleAlt: 'International Logistics from UAE to Africa',
+        description: 'Reliable and efficient shipping solutions connecting markets across continents.'
     },
     {
         image: '/images/covers/yacht-repair.png',
@@ -146,23 +152,24 @@ export default function HomePage() {
             {/* Trust Bar */}
             <section className="bg-primary py-8">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-white">
                         {[
-                            { icon: <Globe className="w-6 h-6" />, title: 'UAE-Based Export Specialists', desc: 'Operating from UAE Free Zone with full export capabilities' },
-                            { icon: <Truck className="w-6 h-6" />, title: 'Reliable Supply Chain to Africa', desc: 'Established logistics network across 20+ African countries' },
-                            { icon: <Package className="w-6 h-6" />, title: 'Wide Range of Industrial Products', desc: 'Comprehensive supply solutions covering all your sourcing needs' },
+                            { icon: <Clock className="w-6 h-6" />, title: '24/7 Customer Support', desc: 'Round-the-clock assistance' },
+                            { icon: <Globe className="w-6 h-6" />, title: 'Global Shipping', desc: 'Reliable worldwide delivery' },
+                            { icon: <Award className="w-6 h-6" />, title: 'Expert Consultation', desc: 'Professional technical advice' },
+                            { icon: <Shield className="w-6 h-6" />, title: 'Quality Assured', desc: 'Certified premium products' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
                                 {...fadeUp}
                                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                                className="flex items-center gap-4 md:justify-center"
+                                className="flex items-center gap-4 justify-center"
                             >
-                                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                                     {item.icon}
                                 </div>
-                                <div>
-                                    <div className="font-semibold text-sm">{item.title}</div>
+                                <div className="text-left">
+                                    <div className="font-semibold text-sm leading-tight">{item.title}</div>
                                     <div className="text-white/70 text-xs mt-0.5">{item.desc}</div>
                                 </div>
                             </motion.div>
