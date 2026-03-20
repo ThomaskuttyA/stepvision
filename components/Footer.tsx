@@ -22,7 +22,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                            Your trusted gateway for global trade from UAE to Africa. Supplying industrial, commercial, and consumer products across 8 major categories.
+                            Your trusted gateway for global trade from UAE to Africa. Supplying industrial, commercial, and consumer products.
                         </p>
                         <div className="flex gap-3">
                             <a href="https://wa.me/971568978100" target="_blank" rel="noopener noreferrer"

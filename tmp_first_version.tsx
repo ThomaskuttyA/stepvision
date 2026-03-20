@@ -1,12 +1,12 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, Shield, Truck, FileCheck, Package, Globe, Award, Clock } from 'lucide-react'
-import { products } from '@/lib/products'
-import ProductCard from '@/components/ProductCard'
+import ProductItemCard from '@/components/ProductItemCard'
 import CTABanner from '@/components/CTABanner'
+import { products } from '@/lib/products'
 
 const fadeUp = {
     initial: { opacity: 0, y: 30 },
@@ -18,39 +18,50 @@ const fadeUp = {
 
 const heroSlides = [
     {
-        image: '/images/covers/marine-cargo-world-map.png',
+        image: '/images/covers/heavy-equipment-machinery.jpg',
         title: 'One stop solution for Hotel supplies and Engineering Products',
         description: 'Your premium gateway for global trade from UAE to Africa.'
     },
     {
-        image: '/images/covers/combined-categories.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
-    },
-    {
-        image: '/images/covers/global-trade.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
-    },
-    {
-        image: '/images/covers/industrial-solutions.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
-    },
-    {
-        image: '/images/covers/yacht-repair.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        image: '/images/covers/building-materials-hardware.jpg',
+        title: 'Quality On Demand Building Materials & Hardware',
+        description: 'Superior construction supplies for large-scale infrastructure projects.'
     },
     {
         image: '/images/covers/marine-equipment.jpg',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        title: 'Advanced Marine & Offshore Equipment',
+        description: 'Reliable maritime solutions for international shipping and offshore operations.'
+    },
+    {
+        image: '/images/covers/automotive-spare-parts.jpg',
+        title: 'Genuine Automotive Spare Parts',
+        description: 'Comprehensive range of high-quality components for all vehicle types.'
+    },
+    {
+        image: '/images/covers/electrical-electronics.jpg',
+        title: 'Industrial Electrical & Electronics',
+        description: 'Cutting-edge technology and robust electrical systems for industrial use.'
+    },
+    {
+        image: '/images/covers/hotel-industry-supplies.jpg',
+        title: 'Premium Hotel Industry Supplies',
+        description: 'Everything you need to run a world-class hospitality business.'
+    },
+    {
+        image: '/images/covers/it-office-products.jpg',
+        title: 'Modern IT & Office Products',
+        description: 'Smart solutions for the digital workplace and corporate efficiency.'
+    },
+    {
+        image: '/images/covers/stationery-general-supplies.jpg',
+        title: 'Stationery & General Supplies',
+        description: 'Daily essentials and specialized tools for every business sector.'
     }
 ]
 
 export default function HomePage() {
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [activeCategory, setActiveCategory] = useState(products[0].slug)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -80,30 +91,30 @@ export default function HomePage() {
                             transition={{ duration: 1.5, ease: "easeInOut" }}
                         />
                     </AnimatePresence>
-                    <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/40 to-transparent z-10" />
+                    <div className="absolute inset-0 bg-black/50 z-10" />
                 </div>
 
-                <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-left w-full">
+                <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentSlide}
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 50 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="flex flex-col items-start"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -30 }}
+                            transition={{ duration: 0.7 }}
+                            className="flex flex-col items-center"
                         >
-                            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] max-w-4xl tracking-tight">
-                                One stop solution for <span className="text-gold">Hotel</span> supplies and <span className="text-gold">Engineering</span> Products
+                            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-5xl">
+                                {heroSlides[currentSlide].title}
                             </h1>
-                            <p className="text-white/90 text-xl sm:text-2xl mb-12 leading-relaxed max-w-2xl font-light">
+                            <p className="text-white/90 text-lg sm:text-xl mb-10 leading-relaxed max-w-2xl">
                                 {heroSlides[currentSlide].description}
                             </p>
-                            <div className="flex flex-wrap gap-5">
-                                <Link href="/products" className="bg-gold text-white text-lg px-12 py-5 shadow-2xl hover:bg-white hover:text-gold transition-all duration-300 rounded-xl font-bold flex items-center gap-3 group">
-                                    View Products <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <Link href="/products" className="btn-gold text-base px-10 py-4 shadow-2xl hover:scale-105 transition-transform rounded-xl">
+                                    View Products <ArrowRight className="w-5 h-5" />
                                 </Link>
-                                <Link href="/contact" className="px-12 py-5 bg-white/10 backdrop-blur-xl border-2 border-white/30 text-white font-bold text-lg hover:bg-white hover:text-navy transition-all duration-500 rounded-xl">
+                                <Link href="/contact" className="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold hover:bg-white/20 transition-all rounded-xl">
                                     Contact Us
                                 </Link>
                             </div>
@@ -149,7 +160,7 @@ export default function HomePage() {
                         {[
                             { icon: <Globe className="w-6 h-6" />, title: 'UAE-Based Export Specialists', desc: 'Operating from UAE Free Zone with full export capabilities' },
                             { icon: <Truck className="w-6 h-6" />, title: 'Reliable Supply Chain to Africa', desc: 'Established logistics network across 20+ African countries' },
-                            { icon: <Package className="w-6 h-6" />, title: 'Wide Range of Industrial Products', desc: 'Covering all your sourcing needs with premium quality' },
+                            { icon: <Package className="w-6 h-6" />, title: 'Wide Range of Industrial Products', desc: 'Over 8 major categories covering all your sourcing needs' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
@@ -160,7 +171,7 @@ export default function HomePage() {
                                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                                     {item.icon}
                                 </div>
-                                <div className="text-left">
+                                <div>
                                     <div className="font-semibold text-sm">{item.title}</div>
                                     <div className="text-white/70 text-xs mt-0.5">{item.desc}</div>
                                 </div>
@@ -222,8 +233,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-
-            {/* Products Grid */}
+            {/* Products Grid with Tabs */}
             <section className="py-24 bg-gray-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div {...fadeUp} className="text-center mb-16">
@@ -234,18 +244,79 @@ export default function HomePage() {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                        {products.map((cat, i) => (
-                            <ProductCard
-                                key={cat.slug}
-                                slug={cat.slug}
-                                name={cat.name}
-                                icon={cat.icon}
-                                coverImage={cat.coverImage}
-                                description={cat.description}
-                                index={i}
-                            />
-                        ))}
+                    {/* Modern Category Tabs */}
+                    <div className="mb-16 flex justify-center">
+                        <div className="inline-flex p-1.5 bg-white/50 backdrop-blur-md rounded-2xl border border-gray-200 shadow-sm overflow-x-auto no-scrollbar max-w-full">
+                            <div className="flex gap-1 min-w-max">
+                                {products.map((cat) => (
+                                    <motion.button
+                                        key={cat.slug}
+                                        onClick={() => setActiveCategory(cat.slug)}
+                                        whileTap={{ scale: 0.95 }}
+                                        className={`relative flex items-center justify-center px-6 py-2.5 rounded-xl transition-all duration-300 text-sm font-semibold whitespace-nowrap z-10 ${activeCategory === cat.slug
+                                            ? 'text-white'
+                                            : 'text-navy/60 hover:text-navy hover:bg-gray-100/50'
+                                            }`}
+                                    >
+                                        {cat.name}
+                                        {activeCategory === cat.slug && (
+                                            <motion.div
+                                                layoutId="activeTab"
+                                                className="absolute inset-0 bg-navy rounded-xl -z-10 shadow-md"
+                                                transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                                            />
+                                        )}
+                                    </motion.button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Active Category Content */}
+                    <div className="min-h-[500px]">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeCategory}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.4 }}
+                                className="space-y-16"
+                            >
+                                {products
+                                    .filter((c) => c.slug === activeCategory)
+                                    .map((category) => (
+                                        <div key={category.slug} className="space-y-12">
+                                            {category.subcategories.map((sub) => {
+                                                const itemsWithImages = sub.items.filter((item) => item.image)
+                                                if (itemsWithImages.length === 0) return null
+
+                                                return (
+                                                    <div key={sub.name} className="space-y-6">
+                                                        <div className="flex items-center gap-4">
+                                                            <div className="h-px bg-gray-200 flex-grow" />
+                                                            <h4 className="text-xl font-bold text-navy/70 uppercase tracking-widest px-4">
+                                                                {sub.name}
+                                                            </h4>
+                                                            <div className="h-px bg-gray-200 flex-grow" />
+                                                        </div>
+                                                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                                                            {itemsWithImages.map((item, idx) => (
+                                                                <ProductItemCard
+                                                                    key={item.name}
+                                                                    name={item.name}
+                                                                    image={item.image}
+                                                                    index={idx}
+                                                                />
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                    ))}
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
                 </div>
             </section>
