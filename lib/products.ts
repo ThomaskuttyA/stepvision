@@ -1,470 +1,383 @@
-export const products = [
+export interface ProductItem {
+    name: string;
+    image?: string;
+    description?: string;
+}
+
+export interface Subcategory {
+    name: string;
+    items: ProductItem[];
+}
+
+export interface Product {
+    slug: string;
+    name: string;
+    icon: string;
+    coverImage: string;
+    description: string;
+    subcategories: Subcategory[];
+}
+
+export const products: Product[] = [
     {
-        slug: "building-materials-hardware",
-        name: "Building Materials & Hardware",
-        icon: "🔨",
-        coverImage: "/images/covers/building-materials-hardware.jpg",
-        description: "Quality construction supplies, tools, fittings and industrial hardware.",
+        slug: "building-materials",
+        name: "1) BUILDING MATERIALS & HARDWARE",
+        icon: "🏗️",
+        coverImage: "/images/covers/new_catalog/steel_bars.png",
+        description: "Comprehensive construction materials including steel, wood, paints, and specialized hardware.",
         subcategories: [
             {
                 name: "Steel Bars",
                 items: [
-                    { name: "Mild Steel Round Bar – 10mm", description: "Specification: Mild Steel Square Bar, available in various sizes 6 to 32 mm diameter" },
-                    { name: "Reinforcement Bar 8 mm", image: "/images/products/building-materials-hardware/steel-bars/reinforcement-bar-8mm.jpeg", description: "Specification: Reinforcement Round bar available in various sizes 6 to 32 mm diameter" },
-                    { name: "Flat bars 10x 3 mm", image: "/images/products/building-materials-hardware/steel-bars/flat-bars.jpeg", description: "Specification: Flat bar available in various sizes 10 x 3, 13X3 mm, 13 X 5 mm, 13 X 6 mm, 16x5 mm etc" },
-                    { name: "Serrated bar 20 mm x 3 mm", image: "/images/products/building-materials-hardware/steel-bars/serrated-bars.jpeg", description: "Specification: Serrated bar available various sizes 3mm to 5 mm at various depths of 20mm to 70mm." }
+                    { name: "REINFORCE BARS", image: "/images/products/new_catalog/reinforcement-bars.jpg", description: "Reinforcement Round bar available in various sizes 6 to 32 mm diameter." },
+                    { name: "FLAT BARS", image: "/images/products/new_catalog/flat-bars.jpg", description: "Mild Steel Flat bar available in various sizes 10 x 3, 13X3 mm, 13 X 5 mm etc." },
+                    { name: "SERRATED BARS", image: "/images/products/new_catalog/serrated-bars.jpg", description: "Serrated bar available various sizes 3mm to 5 mm at various depths of 20mm to 70mm." }
                 ]
             },
             {
                 name: "White Wood",
                 items: [
-                    { name: "White Wood Canadian White Wood WXW50", description: "Canadian White Wood WXW50. Specification: Size 1'' x 2'', 1'' x 4'', 1'' x 6'', 2'' x 2'', 2'' x 3'', 2'' x 4'', 2'' x 12'', 3'' x 3'', 4'' x 4''" },
-                    { name: "Ply Wood – Hardwood", description: "Various type ply wood available – Bendy Plywood, Birch Plywood, Commercial plywood, Film faced plywood, Veneer plywood WBP plywood" },
-                    { name: "Moisture Resistance MDF", image: "/images/products/building-materials-hardware/wood/moisture-resistant-mdf.jpeg", description: "Specification: MR MDF No soggy sagas, only style! Secret weapon: water-repelling glue, maybe a waxy dip. Pulped, pressed, prepped, ready to conquer damp." },
-                    { name: "Solid Core Chip Board", image: "/images/products/building-materials-hardware/wood/solid-core-chip-board.jpeg", description: "Solid Core Chip Board 38 mm thickness .size 915 x 2135mm. Solid Core Chipboard is easy to work with and can be finished with laminates, veneers, or paint, providing a versatile solution for various design" }
-                ]
-            },
-            {
-                name: "Aluminum Sections",
-                items: [
-                    { name: "Aluminium 40 x 20 x 1.2 mm Rectangular Hollow 5.95M", description: "Specification: Shape Form: Hollow. Shape Profile: Rectangular hollow profile, Rectangular Hollow Section (RHS). Cross Section Dimensions: 0.2 CMT (height). Length: 5.95M. Thickness: Uniform wall thickness. Width: 5 CMT" },
-                    { name: "GI Pipes", description: "Specification: • Strong, tough and corrosion-resistant. • Popular choice in various applications for aesthetic appearances. • Available sizes range from 20NB to 100NB. • Thickness range from 1.2mm to 2.5mm" },
-                    { name: "Copper Pipes", description: "Copper Pipe/Tube 1/4\"-6\" Inch Diameter x 1' foot Length" },
-                    { name: "Metal Sheets", description: "0.8mm Thick Metal Plate 1050 Grade Aluminium Sheets" }
+                    { name: "Plywood", image: "/images/products/new_catalog/plywood.jpeg", description: "Various type ply wood available – Bendy Plywood, Birch Plywood, Commercial plywood, Film faced plywood, Veneer plywood WBP plywood." },
+                    { name: "MOISTURE RESISTANCE MDF", image: "/images/products/new_catalog/moisture-resistance-mdf.jpg", description: "MR MDF No soggy sagas, only style! Secret weapon: water-repelling glue, maybe a waxy dip. Pulped, pressed, prepped, ready to conquer damp." },
+                    { name: "SOLID CORE CHIP BOARD", image: "/images/products/new_catalog/solid-core-chip-board.jpg", description: "Solid Core Chip Board 38 mm thickness, size 915 x 2135mm. Easy to work with and can be finished with laminates, veneers, or paint." }
                 ]
             },
             {
                 name: "Paints",
                 items: [
-                    { name: "Jotun Fenomastic My Home Smooth Silk Base A (900 ml)", image: "/images/products/building-materials-hardware/paints/jotun-interior.jpeg", description: "Brand:Jotun" },
-                    { name: "Weathercoat Anti Dustt TT", image: "/images/products/building-materials-hardware/paints/berger-silk-glamor.jpeg", description: "Brand:BERGER. 100% acrylic emulsion exterior wall paint. Unique Dust Guard technology." },
-                    { name: "Jotun Penguard Topcoat", image: "/images/products/building-materials-hardware/paints/jotun-interior.jpeg", description: "Brand : JOTUN. This is a 2 Component Product (A + B), Both are Included 5L Consists of 4 + 1 Litre" },
-                    { name: "National Paints PVA Primer White", image: "/images/products/building-materials-hardware/paints/national-paints-primer.jpeg", description: "Brand :National Paints. Color :White. Itme Type : PVA Primer" }
+                    { name: "INTERIOR PAINTS", image: "/images/products/new_catalog/interior-paints.jpg", description: "Jotun Fenomastic My Home Smooth Silk. Premium smooth silk finish." },
+                    { name: "EXTERIOR PAINTS", image: "/images/products/new_catalog/exterior-paints.jpg", description: "Weathercoat Anti Dustt TT. 100% acrylic emulsion exterior wall paint with Dust Guard technology." },
+                    { name: "ANTI FOUL PAINTS", image: "/images/products/new_catalog/anti-foul-paints.jpg", description: "High-performance anti-fouling protective coatings for marine environments." }
                 ]
             },
             {
-                name: "Construction Products",
+                name: "Water Proofing Materials",
                 items: [
-                    { name: "Waterproofing Materials (SIKALITE)", image: "/images/products/building-materials-hardware/construction-products/sikalite.jpeg", description: "Ready To Use Powdered Waterproofing Admixture For Cement/Sand Mortars and Concrete" },
-                    { name: "Adhesives & Sealants (Sikasil-116 GP White)", description: "SIKA - Universal Multipurpose Silicone Sealant For Glazing And Weatherproofing - Sikasil-116 Gp White" }
+                    { name: "Water Proofing Additive for Cements/Mortar", image: "/images/products/new_catalog/sikalite.jpeg", description: "SIKA LITE. Ready to use powdered waterproofing admixture for cement/sand mortars and concrete." },
+                    { name: "Silicon Sealant", image: "/images/products/new_catalog/sikasil-1.jpeg", description: "SIKA universal multipurpose silicone sealants for glazing and weatherproofing." }
                 ]
             },
             {
-                name: "Cement Board",
+                name: "CEMENT BOARD",
                 items: [
-                    { name: "Fiber Cement Board", image: "/images/products/building-materials-hardware/cement-board/cement-fibre-board.jpg", description: "ideal for cladding, partition walls, ceilings, and facades." },
-                    { name: "Gypsum Board", image: "/images/products/building-materials-hardware/cement-board/regular-gypsum.jpg", description: "Standard Gypsum dimensions (1200 x 2400 x 12mm - 15mm) user-friendly installation features." }
+                    { name: "FIBRE CEMENT BOARD", image: "/images/products/building-materials-hardware/cement-board/cement-fibre-board.jpg", description: "Durable and reliable Fibre Cement Board for all construction needs." },
+                    { name: "GYPSUM BOARD", image: "/images/products/new_catalog/gypsum-board.jpg", description: "High-quality Gypsum Board for versatile construction applications." }
                 ]
             },
             {
-                name: "Power Tools",
+                name: "POWER TOOLS",
                 items: [
-                    { name: "Bosch Hammer GBH 4-32 DFR", image: "/images/products/building-materials-hardware/power-tools/bosch-hammer.jpeg" },
-                    { name: "DeWalt Cut-off Saw 14 inch", image: "/images/products/building-materials-hardware/power-tools/dewalt-cutoff-saw.jpeg" },
-                    { name: "Makita Grinder", image: "/images/products/building-materials-hardware/power-tools/makita-grinder.jpeg" }
+                    { name: "ROTORY HAMMERS", image: "/images/products/new_catalog/rotary-hammer.jpg", description: "Professional grade drilling and hammering equipment for high-performance construction tasks." },
+                    { name: "ANGLE GRINDERS", image: "/images/products/new_catalog/angle-grinder.jpg", description: "Heavy-duty electric angle grinders for precision cutting and grinding in metal and stone." },
+                    { name: "CUT OFF SAWS", image: "/images/products/new_catalog/cut-off-saw.jpg", description: "Industrial abrasive cut-off saw designed for powerful, accurate cutting through metal sections." }
                 ]
             },
             {
-                name: "Hand Tools & Measuring",
+                name: "HAND & MEASURING TOOLS",
                 items: [
-                    { name: "Fibre Glass nail Hammer 450 Gramms (Stanley)", description: "Brand : Stanley" },
-                    { name: "Combination Wrench Set (Stanley)", image: "/images/products/hand-tools-measuring/stanley-wrench-set.png", description: "Combination wrench 10 mm, 12 mm, 14 mm. Brand : Stanley" },
-                    { name: "Spirit Level 12\" Professional (UKEN)", description: "Brand :UKEN" },
-                    { name: "Stanley Measuring Tape 8M Bimaterial", image: "/images/products/hand-tools-measuring/stanley-measuring-tape.jpeg", description: "8-meter length, suitable for large-scale measurements. Bimaterial build for added comfort and durability. Clear, accurate markings for precise results. Ideal for construction, carpentry, and industrial use. Robust Stanley design ensures long-lasting performance." },
-                    { name: "Safety Shoe Model # 50053-127-44", image: "/images/products/hand-tools-measuring/dewalt-safety-shoes.jpeg", description: "Brand :DEWALT. PLANE Low Cut Safety Shoes - Size 39-44, Steel Toe, Taupe Suede, SB Rated, Oil Resistant" },
-                    { name: "Dynagrip Combination Plier 180MM", image: "/images/products/building-materials-hardware/hand-tools-measuring/combination-plier.jpeg", description: "Forged carbon steel jaws and handle provides long life. Heat treated to ensure durability and optimal performance. For greater reliability, induction hardened at cutting edges. Induction hardened for high performance, Ergonomically designed" }
+                    { name: "COMBINATION PLIERS", image: "/images/products/new_catalog/combination-pliers.jpg", description: "Professional grade multi-purpose combination pliers with ergonomic grips for maximum control." },
+                    { name: "TOOLS SET", image: "/images/products/new_catalog/tools-set.jpg", description: "Comprehensive high-quality tool set featuring essential equipment for professional maintenance and repair work." },
+                    { name: "SPIRIT LEVEL", image: "/images/products/new_catalog/spirit-level.jpg", description: "Precision spirit level for accurate horizontal and vertical alignment in construction and carpentry." },
+                    { name: "MEASURING TAPE", image: "/images/products/new_catalog/measuring-tape.jpg", description: "Durable and accurate measuring tape with clear markings and robust locking mechanism." },
+                    { name: "SAFETY SHOES", image: "/images/products/new_catalog/safety-shoes.jpg", description: "Premium industrial safety shoes providing superior protection and comfort for rugged work environments." }
                 ]
             },
-            {
-                name: "Electrical, Plumbing & HVAC",
-                items: [
-                    { name: "Electrical fittings" },
-                    { name: "Plumbing pipes & fittings" },
-                    { name: "HVAC units" },
-                    { name: "Ductwork" },
-                    { name: "GROHE Mixer", image: "/images/products/building-materials-hardware/electrical-plumbing-hvac/grohe-mixer.jpg" }
-                ]
-            }
         ]
     },
     {
-        slug: "heavy-equipment-machinery",
-        name: "Heavy Equipment & Machinery",
-        icon: "⚙️",
-        coverImage: "/images/covers/heavy-equipment-machinery.jpg",
-        description: "Excavators, loaders, earthmoving machinery and support equipment.",
+        slug: "heavy-equipment",
+        name: "2) HEAVY EQUIPMENTS & MACHINARIES",
+        icon: "🚜",
+        coverImage: "/images/covers/new_catalog/heavy_equipment.png",
+        description: "Industrial machinery, earthmoving equipment, and specialized mixing processing units.",
         subcategories: [
             {
-                name: "Earthmoving",
+                name: "EARTH MOVING",
                 items: [
-                    { name: "JCB 4CX Super Backhoe Loader", image: "/images/products/heavy-equipment-machinery/earthmoving/jcb-4cx-backhoe.jpeg", description: "The primary design features of the 4CX-14 SUPER backhoe loader are the four equal-sized tires which provide high ground clearance and traction, and 4-wheel steer capability for enhanced manoeuvrability. Additionally, a host of performance, comfort, safety and efficiency enhancements enable this machine to tackle loading operations like no other." },
-                    { name: "Track loaders", image: "/images/products/heavy-equipment-machinery/earthmoving/jcb-teleskid.jpg", description: "High-performance loaders for construction and earthmoving" },
-                    { name: "Backhoe loaders", description: "Versatile machines for loading and excavation operations" },
-                    { name: "Compact loaders", description: "Manoeuvrable loaders for tight spaces and efficient earthmoving" }
+                    { name: "BACKHOE LOADERS", image: "/images/products/new_catalog/backhoe-loader.jpg", description: "Multi-functional backhoe loaders for digging, trenching, and loading tasks." },
+                    { name: "TRACK LOADER", image: "/images/products/new_catalog/track-loader.jpg", description: "Versatile track loaders for efficient loading and material handling on various terrains." },
+                    { name: "ESCAVATORS", image: "/images/products/new_catalog/excavator.jpg", description: "Heavy-duty excavators for large scale digging and earthmoving operations." }
                 ]
             },
             {
-                name: "Lifting Equipment",
+                name: "LIFTING EQUIPMENTS",
                 items: [
-                    { name: "Boom lift", image: "/images/products/heavy-equipment-machinery/lifting-equipment/genie-boom-lift.jpg" },
-                    { name: "Scissor lift", image: "/images/products/heavy-equipment-machinery/lifting-equipment/scissor-lift.jpg" },
-                    { name: "Mobile crane", image: "/images/products/heavy-equipment-machinery/lifting-equipment/liebherr-crane.jpg" },
-                    { name: "Forklifts", image: "/images/products/heavy-equipment-machinery/lifting-equipment/cat-forklift.jpg" },
-                    { name: "Stanley Pallet Truck", image: "/images/products/heavy-equipment-machinery/lifting-equipment/stanley-pallet-truck.jpg" }
+                    { name: "BOOM LIFT", image: "/images/products/new_catalog/boom-lift.jpg", description: "Versatile boom lifts for high-altitude reach and stability." },
+                    { name: "SCISSOR LIFT", image: "/images/products/new_catalog/scissor-lift.jpg", description: "Efficient scissor lifts for vertical elevation and workspace safety." },
+                    { name: "MOBILE CRANES", image: "/images/products/new_catalog/mobile-crane.jpg", description: "High-capacity mobile cranes for heavy lifting across various sites." },
+                    { name: "FORK LIFTS", image: "/images/products/new_catalog/fork-lift.jpg", description: "Reliable forklifts for material handling and warehouse operations." },
+                    { name: "PALLET TRUCKS", image: "/images/products/new_catalog/pallet-truck.jpg", description: "Durable pallet trucks for efficient transport of goods and materials." }
                 ]
             },
             {
-                name: "Transport & Haulage",
+                name: "TRANSPORT & HAULAGE",
                 items: [
-                    { name: "Trucks", image: "/images/products/heavy-equipment-machinery/transport-haulage/scania-truck.jpg" },
-                    { name: "Trailers", image: "/images/products/heavy-equipment-machinery/transport-haulage/benz-trailer.jpg" }
+                    { name: "TRUCK", image: "/images/products/new_catalog/truck-scania.jpg", description: "Heavy-duty Scania trucks for reliable large-scale material transport and haulage." },
+                    { name: "TRAILOR", image: "/images/products/new_catalog/trailer-benz.jpg", description: "Durable Mercedes-Benz trailers for specialized transport and heavy load hauling." }
                 ]
             },
             {
-                name: "Mixing & Processing",
+                name: "MIXING & PROCESSING",
                 items: [
-                    { name: "Imer Multi-Mix 350 Mortar/Concrete Mixer w/Steel Drum", image: "/images/products/heavy-equipment-machinery/mixing-processing/imer-mixer.png", description: "Brand : IMER. Drum Capacity :12 Cu ft. Motor Power 1.9 hp" },
-                    { name: "Industrial mixers", description: "Heavy-duty mixing solutions for construction and industry" }
+                    { name: "TRUCK MIXER", image: "/images/products/new_catalog/truck-mixer-sany.jpg", description: "Professional grade Sany truck mixers for on-site concrete preparation and delivery." },
+                    { name: "INDUSTRIAL MIXER", image: "/images/products/new_catalog/industrial-mixer-imer.png", description: "High-performance Imer industrial mixers for consistent mixing of construction materials." }
                 ]
             }
         ]
     },
     {
-        slug: "automotive-spare-parts",
-        name: "Automotive & Spare Parts",
+        slug: "automotive",
+        name: "3) AUTOMOTIVE & SPARE PARTS",
         icon: "🚗",
-        coverImage: "/images/covers/automotive-spare-parts.jpg",
-        description: "New and used spare parts for automobiles and heavy equipment.",
+        coverImage: "/images/covers/new_catalog/automotive.png",
+        description: "Premium vehicles, genuine spare parts, and specialized automotive components.",
         subcategories: [
             {
-                name: "Vehicles",
+                name: "VEHICLES",
                 items: [
-                    { name: "Golf cars / utility vehicles", image: "/images/products/automotive-spare-parts/vehicles/golf-car.jpg" },
-                    { name: "Off-road vehicles" },
-                    { name: "Used vehicles" }
+                    { name: "GOLF CAR", image: "/images/products/new_catalog/golf-car-clubcar.png", description: "Premium Club Car golf cars and utility vehicles for golf courses, resorts, and gated communities." }
                 ]
             },
             {
-                name: "Tyres",
+                name: "TYRES",
                 items: [
-                    { name: "Standard tyres", image: "/images/products/automotive-spare-parts/tyres/goodyear-tyre.jpg" },
-                    { name: "Off-road tyres", image: "/images/products/automotive-spare-parts/tyres/off-road-tyres.jpg" },
-                    { name: "Heavy equipment tyres" },
-                    { name: "Yokohama Tyre", image: "/images/products/automotive-spare-parts/tyres/yokohama-tyre.jpg" }
+                    { name: "STANDARD TYRES", image: "/images/products/new_catalog/standard-tyre.png", description: "High-quality standard tires for various passenger and commercial vehicles." },
+                    { name: "OFF ROAD TYRES", image: "/images/products/new_catalog/off-road-tyre.jpg", description: "Durable off-road tires designed for superior traction and performance on rugged terrains." }
                 ]
             },
             {
-                name: "Engine Parts",
+                name: "ELECTRICAL & COOLING",
                 items: [
-                    { name: "Engine components" },
-                    { name: "Gaskets" },
-                    { name: "Filters" }
+                    { name: "ALTERNATOR", image: "/images/products/new_catalog/alternator.png", description: "High-output alternators for reliable vehicle electrical system charging." },
+                    { name: "STARTING MOTOR", image: "/images/products/new_catalog/starting-motor.png", description: "Powerful starting motors for consistent and dependable engine ignition." },
+                    { name: "RADIATOR", image: "/images/products/new_catalog/radiator.png", description: "High-efficiency Radiator for reliable engine cooling in all conditions." },
+                    { name: "AC COMPONENTS", image: "/images/products/new_catalog/ac-components.png", description: "Complete range of premium automotive air conditioning compressors and components." }
                 ]
             },
             {
-                name: "Suspension & Steering",
+                name: "ENGINE PARTS",
                 items: [
-                    { name: "Shock absorbers" },
-                    { name: "Control arms" },
-                    { name: "Steering components" }
+                    { name: "PISTON", image: "/images/products/new_catalog/engine-piston.jpg", description: "Precision engineered pistons for various engine models." },
+                    { name: "ENGINE PARTS", image: "/images/products/new_catalog/engine-parts-set.jpg", description: "Comprehensive range of high-quality engine components and replacement parts." },
+                    { name: "GASKET", image: "/images/products/new_catalog/engine-gasket.jpg", description: "High-quality engine gaskets for reliable sealing and performance." },
+                    { name: "FILTERS", image: "/images/products/new_catalog/engine-filter.jpg", description: "Premium oil, air, and fuel filters for superior engine protection and longevity." }
                 ]
             },
             {
-                name: "Electrical & Cooling",
+                name: "SUSPENSION & STEERING",
                 items: [
-                    { name: "Alternators" },
-                    { name: "Starters" },
-                    { name: "Radiators" },
-                    { name: "AC components" }
+                    { name: "SHOCK ABSORBER", image: "/images/products/new_catalog/shock-absorber.png", description: "High-performance suspension dampening systems for various vehicles." },
+                    { name: "CONTROL ARMS", image: "/images/products/new_catalog/control-arm.png", description: "Durable and precision-engineered steering control arm components." },
+                    { name: "STEERING COMPONENTS", image: "/images/products/new_catalog/steering-components.png", description: "Complete range of precision steering racks, linkage, and associated components." }
                 ]
             },
             {
-                name: "Transmission",
+                name: "TRANSMISSION",
                 items: [
-                    { name: "Gearbox parts" },
-                    { name: "Clutch systems" },
-                    { name: "Driveshaft components" }
+                    { name: "GEAR BOX COMPONENTS", image: "/images/products/new_catalog/gearbox-components.png", description: "Precision-engineered transmission gears, casings, and synchronizer assemblies." },
+                    { name: "CLUTCH SYSTEMS", image: "/images/products/new_catalog/clutch-systems.png", description: "High-performance clutch kits, pressure plates, and release bearings for smooth engagement." },
+                    { name: "DRIVE SHAFT COMPONENTS", image: "/images/products/new_catalog/driveshaft-components.png", description: "Robust power transmission shafts, U-joints, and differential components." }
                 ]
-            }
+            },
         ]
     },
     {
-        slug: "marine-equipment",
-        name: "Marine Equipment",
+        slug: "marine",
+        name: "4) MARINE EQUIPMENT",
         icon: "⚓",
-        coverImage: "/images/covers/marine-equipment.jpg",
-        description: "Marine hardware and accessories for vessels, docks, and offshore projects.",
+        coverImage: "/images/covers/new_catalog/marine.png",
+        description: "Professional maritime gear including anchoring, electronics, and safety systems.",
         subcategories: [
             {
-                name: "Anchoring & Docking",
+                name: "ANCHORING & DOCKING",
                 items: [
-                    { name: "Anchors" },
-                    { name: "Mooring ropes" },
-                    { name: "Dock fenders" },
-                    { name: "Chain & shackles" }
+                    { name: "BOAT ANCHORS", image: "/images/products/new_catalog/boat-anchor.jpg", description: "High-hold boat anchors for various seabeds and vessel sizes." },
+                    { name: "MOORING ROPES", image: "/images/products/new_catalog/mooring-rope.png", description: "Durable marine-grade nylon and polyester mooring ropes." },
+                    { name: "BOAT FENDERS", image: "/images/products/new_catalog/boat-fender.jpg", description: "Impact-resistant boat fenders for optimal hull protection while docking." },
+                    { name: "SHACKLES", image: "/images/products/new_catalog/shackles.png", description: "Stainless steel marine shackles and heavy-duty connectors." }
                 ]
             },
             {
-                name: "Boats & Vessels",
+                name: "MARINE ELECTRONICS",
                 items: [
-                    { name: "Boat sales/supply" },
-                    { name: "Vessel accessories" }
+                    { name: "GPS UNITS", image: "/images/products/new_catalog/gps-unit.jpg", description: "Advanced high-precision marine navigation GPS systems." },
+                    { name: "VHF RADIO", image: "/images/products/new_catalog/vhf-radio.png", description: "Global maritime communication VHF radios for clear emergency and operational hailing." },
+                    { name: "FISH FINDERS", image: "/images/products/new_catalog/fish-finder.png", description: "High-resolution CHIRP sonar for precise maritime detecting and underwater imaging." },
+                    { name: "MARINE SPEAKERS", image: "/images/products/new_catalog/marine-speaker.jpg", description: "Premium waterproof marine entertainment systems for harsh sea environments." }
                 ]
             },
             {
-                name: "Marine Electronics",
+                name: "ELECTRICAL & LIGHTING",
                 items: [
-                    { name: "GPS units" },
-                    { name: "VHF radios" },
-                    { name: "Fish finders" },
-                    { name: "Marine speakers" }
+                    { name: "MARINE LED LIGHTS", image: "/images/products/new_catalog/marine-led-light.png", description: "High-intensity underwater and deck LED lighting systems." },
+                    { name: "NAVIGATION LIGHTS", image: "/images/products/new_catalog/navigation-light.png", description: "Certified maritime navigation and signal lighting for safe passage." },
+                    { name: "MARINE ELECTRICAL WIRING", image: "/images/products/new_catalog/marine-wiring.jpg", description: "Tinned copper marine-grade multi-core electrical wiring and cables." }
                 ]
             },
             {
-                name: "Electrical & Lighting",
+                name: "SAFETY EQUIPMENT",
                 items: [
-                    { name: "Marine LED lights" },
-                    { name: "Navigation lights" },
-                    { name: "Electrical wiring" }
+                    { name: "Life Jackets", image: "https://placehold.co/600x400/1A1A2E/D4AF37?text=LifeJackets", description: "SOLAS approved life jackets for all passenger types." },
+                    { name: "LIFE RINGS", image: "/images/products/new_catalog/life-ring.png", description: "High-visibility SOLAS approved life rings and rescue buoys." },
+                    { name: "LIFEBOUY LIGHTS", image: "/images/products/new_catalog/lifebuoy-light.png", description: "Automatic water-activated lifebuoy self-igniting lights." },
+                    { name: "EPIRB", image: "/images/products/new_catalog/epirb.png", description: "Global emergency position indicating radio beacons for sea rescue." },
+                    { name: "Flares", image: "https://placehold.co/600x400/1A1A2E/D4AF37?text=Flares", description: "Handheld and parachute marine distress signals." }
                 ]
             },
             {
-                name: "Safety Equipment",
+                name: "MARINE PLUMBING & STEERING",
                 items: [
-                    { name: "Life rings" },
-                    { name: "Life-saving lights" },
-                    { name: "Buoys" },
-                    { name: "EPIRBs" }
-                ]
-            },
-            {
-                name: "Plumbing & Steering",
-                items: [
-                    { name: "Marine plumbing" },
-                    { name: "Sanitation systems" },
-                    { name: "Steering components" }
-                ]
-            },
-            {
-                name: "Marine Paints",
-                items: [
-                    { name: "Anti-fouling paint" },
-                    { name: "Topside paint" },
-                    { name: "Primer" }
-                ]
-            },
-            {
-                name: "Ropes & Lines",
-                items: [
-                    { name: "Mooring lines" },
-                    { name: "Anchor rope" },
-                    { name: "Dock lines" }
+                    { name: "FLIP TRAP SINK DRAIN", image: "/images/products/new_catalog/sink-drain.jpg", description: "Space-saving marine flip-trap sink drains with integrated odor blocker." },
+                    { name: "BRASS FITTING", image: "/images/products/new_catalog/brass-fitting.jpg", description: "Corrosion-resistant marine brass fittings and pipe connectors." },
+                    { name: "MARINE SANITISATION DEVICE", image: "/images/products/new_catalog/sanitisation-device.jpg", description: "Advanced marine sewage treatment and sanitization systems." },
+                    { name: "MARINE STEERING SYSTEM", image: "/images/products/new_catalog/steering-system.png", description: "Hydraulic and mechanical marine steering helm and cable systems." }
                 ]
             }
         ]
     },
     {
-        slug: "electrical-electronics",
-        name: "Electrical Equipment & Electronics",
+        slug: "electrical",
+        name: "5) ELECTRICAL EQUIPMENT & ELECTRONICS",
         icon: "⚡",
-        coverImage: "/images/covers/electrical-electronics.jpg",
-        description: "Power distribution, generators, cables and consumer electronics.",
+        coverImage: "/images/covers/new_catalog/electrical.png",
+        description: "Power generation, distribution, and smart climate control solutions.",
         subcategories: [
             {
-                name: "Power Generation",
+                name: "POWER GENERATION",
                 items: [
-                    { name: "Generators" },
-                    { name: "Water heaters" },
-                    { name: "Solar systems" }
+                    { name: "PORTABLE GENERATOR", image: "/images/products/new_catalog/portable-generator.png", description: "Compact and reliable portable marine power generators." },
+                    { name: "GENERATOR- STATIONARY", image: "/images/products/new_catalog/stationary-generator.png", description: "Industrial capacity standby generator sets for heavy-duty power backup." },
+                    { name: "WATER HEATER", image: "/images/products/new_catalog/water-heater.png", description: "High-efficiency marine and industrial electric water heating units." },
+                    { name: "SOLAR SYSTEM", image: "/images/products/new_catalog/solar-system.png", description: "Comprehensive renewable solar energy kits for sustainable power." }
                 ]
             },
             {
-                name: "Electrical Distribution",
+                name: "ELECTRICAL DISTRIBUTION",
                 items: [
-                    { name: "Switches & switchgear" },
-                    { name: "Cables & wiring" },
-                    { name: "PVC conduit & accessories" },
-                    { name: "DUCAB Electrical Cable", image: "/images/products/electrical-electronics/electrical-distribution/ducab-cable.jpg" },
-                    { name: "FLUKE Tester", image: "/images/products/electrical-electronics/electrical-distribution/fluke-tester.jpg" },
-                    { name: "HIOKI Clamp Meter", image: "/images/products/electrical-electronics/electrical-distribution/hioki-clamp-meter.jpg" }
+                    { name: "SWITCH GEAR", image: "/images/products/new_catalog/switch-gear.png", description: "High-voltage electrical switchgear for industrial power management." },
+                    { name: "SWITCH BOARD", image: "/images/products/new_catalog/switch-board.png", description: "Industrial control switchboards and electrical distribution panels." },
+                    { name: "CABLE", image: "/images/products/new_catalog/electrical-cable.png", description: "Low and medium voltage industrial electrical cables and wiring." },
+                    { name: "PVC CONDUIT PIPES", image: "/images/products/new_catalog/pvc-conduit.png", description: "Durable PVC electrical protection conduit pipes and systems." }
                 ]
             },
             {
-                name: "Lighting",
+                name: "LIGHTING",
                 items: [
-                    { name: "Outdoor lighting" },
-                    { name: "LED fixtures" },
-                    { name: "Commercial lighting" },
-                    { name: "Ceiling Light 30W LED", image: "/images/products/electrical-electronics/lighting/ceiling-light.jpg" },
-                    { name: "Wireless Mini LED", image: "/images/products/electrical-electronics/lighting/wireless-mini-led.jpg" }
+                    { name: "OUTDOOR LIGHTING", image: "/images/products/new_catalog/outdoor-lighting.png", description: "Weatherproof architectural outdoor and garden lighting solutions." },
+                    { name: "LED FIXTURES", image: "/images/products/new_catalog/led-fixture.jpg", description: "High-efficiency indoor LED ceiling and wall light fixtures." },
+                    { name: "COMMERCIAL LIGHTING", image: "/images/products/new_catalog/commercial-lighting.png", description: "Large-scale industrial, office, and retail lighting systems." }
                 ]
             },
             {
-                name: "Climate & Ventilation",
+                name: "CLIMATE & VENTILATION",
                 items: [
-                    { name: "Fans" },
-                    { name: "Air conditioning units", image: "/images/products/electrical-electronics/climate-ventilation/generaltec-ac.jpg" },
-                    { name: "Ventilation systems" }
+                    { name: "CEILING FAN", image: "/images/products/new_catalog/ceiling-fan.png", description: "Modern high-airflow elegant decorative ceiling fans." },
+                    { name: "AIR CONDITIONING UNITS", image: "/images/products/new_catalog/ac-unit.jpg", description: "Package and split air conditioning systems for marine and home." },
+                    { name: "PANNEL VENTILATION SYSTEMS", image: "/images/products/new_catalog/panel-ventilation.png", description: "Industrial electrical panel cooling and ventilation systems." }
                 ]
             },
             {
-                name: "Consumer Electronics",
+                name: "CONSUMER ELECTRONICS",
                 items: [
-                    { name: "TVs" },
-                    { name: "Audio systems" },
-                    { name: "Smart devices" }
+                    { name: "TV", image: "/images/products/new_catalog/smart-tv.jpg", description: "High-definition smart LED and OLED television sets." },
+                    { name: "HOME THEATER", image: "/images/products/new_catalog/home-theater.jpg", description: "Professional surround sound home theater systems." },
+                    { name: "SMART HOME SYSTEM", image: "/images/products/new_catalog/smart-home.png", description: "Integrated home automation and smart control systems." }
                 ]
             }
         ]
     },
     {
-        slug: "hotel-industry-supplies",
-        name: "Hotel Industry Supplies",
+        slug: "hotel-supplies",
+        name: "6) HOTEL SUPPLIES",
         icon: "🏨",
-        coverImage: "/images/covers/hotel-industry-supplies.jpg",
-        description: "Complete hospitality supply solutions for hotels and commercial kitchens.",
+        coverImage: "/images/covers/new_catalog/hotel_supplies.png",
+        description: "Professional hospitality supplies for dining, kitchen, and housekeeping.",
         subcategories: [
             {
-                name: "Kitchen Equipment",
+                name: "Table Top & Dining",
                 items: [
-                    { name: "Commercial ovens" },
-                    { name: "Refrigeration" },
-                    { name: "Food prep equipment" },
-                    { name: "Cookware" }
+                    { name: "GLASSWARE", image: "/images/products/new_catalog/glassware.jpg", description: "Premium crystal and tempered glassware sets for dining and bars." },
+                    { name: "DINNERWARE", image: "/images/products/new_catalog/dinnerware.jpg", description: "Fine porcelain and luxury ceramic dinner sets for high-end dining." },
+                    { name: "CUTLERY WARE", image: "/images/products/new_catalog/cutlery-ware.png", description: "Premium stainless steel designer cutlery and fine flatware sets." }
                 ]
             },
             {
-                name: "Lobby & Common Areas",
+                name: "Kitchen & Catering",
                 items: [
-                    { name: "Furniture" },
-                    { name: "Decorative items" },
-                    { name: "Reception equipment" }
+                    { name: "COOKWARE", image: "/images/products/new_catalog/cookware.png", description: "Professional-grade industrial pots, pans, and commercial baking sets." },
+                    { name: "KITCHEN TOOLS", image: "/images/products/new_catalog/kitchen-tools.jpg", description: "Advanced professional chef utensils and essential kitchen aids." }
                 ]
             },
             {
-                name: "Laundry Equipment",
+                name: "Housekeeping & Cleaning",
                 items: [
-                    { name: "Commercial washers" },
-                    { name: "Dryers" },
-                    { name: "Ironing equipment" }
+                    { name: "CLEANING CARTS", image: "/images/products/new_catalog/cleaning-cart.jpg", description: "Professional-grade janitorial trolleys and mobile cleaning stations." },
+                    { name: "FRONT OFFICE TROLLEY", image: "/images/products/new_catalog/front-office-trolley.jpg", description: "Luxury golden luggage and front office trolleys for premium hospitality." }
                 ]
             },
             {
-                name: "Guest Room Supplies",
+                name: "Guest Room Essentials",
                 items: [
-                    { name: "Bedding & linens" },
-                    { name: "Guest amenities" },
-                    { name: "In-room equipment" }
-                ]
-            },
-            {
-                name: "Housekeeping",
-                items: [
-                    { name: "Cleaning equipment" },
-                    { name: "Housekeeping trolleys" },
-                    { name: "Cleaning products" }
+                    { name: "SHOWER GEL", image: "/images/products/new_catalog/shower-gel-luxury.jpg", description: "Premium luxury hospitality shower gel for guest rooms." },
+                    { name: "SOAP", image: "/images/products/new_catalog/soap-luxury.jpg", description: "Designer luxury soap bars for premium hotel guest amenities." }
                 ]
             }
         ]
     },
     {
-        slug: "it-office-products",
-        name: "IT & Office Products",
+        slug: "it-office",
+        name: "7) IT & OFFICE PRODUCTS",
         icon: "💻",
-        coverImage: "/images/covers/it-office-products.jpg",
-        description: "Computers, networking equipment, peripherals and office essentials.",
+        coverImage: "/images/covers/new_catalog/it_office.png",
+        description: "Advanced networking hardware, IT infrastructure, and modern office supplies.",
         subcategories: [
-            {
-                name: "Computing",
-                items: [
-                    { name: "Desktop PCs" },
-                    { name: "Laptops" },
-                    { name: "Servers" },
-                    { name: "Peripherals" }
-                ]
-            },
             {
                 name: "Networking",
                 items: [
-                    { name: "Routers & switches" },
-                    { name: "Network cables" },
-                    { name: "WiFi equipment" },
-                    { name: "Rack systems" }
+                    { name: "NETWORK CABLE", image: "https://placehold.co/600x400/1A1A2E/D4AF37?text=Network+Cable", description: "CAT6 and high-speed fiber optic networking cables." },
+                    { name: "ROUTER", image: "https://placehold.co/600x400/1A1A2E/D4AF37?text=Router", description: "Enterprise-grade high-performance routers." },
+                    { name: "ETHERNET SPLITTER", image: "/images/products/new_catalog/ethernet-splitter-ext.png", description: "High-performance Gigabit Ethernet network switches and hub expanders." }
                 ]
             },
             {
-                name: "Office Equipment",
+                name: "Office Organization",
                 items: [
-                    { name: "Printers" },
-                    { name: "Copiers" },
-                    { name: "Scanners" },
-                    { name: "Projectors" }
-                ]
-            },
-            {
-                name: "Communication",
-                items: [
-                    { name: "IP phones" },
-                    { name: "CCTV systems" },
-                    { name: "Intercoms" }
+                    { name: "DESKTOP ORGANIZERS", image: "/images/products/new_catalog/desktop-organizer-mesh.jpg", description: "Premium mesh desk management systems and ergonomic storage solutions." }
                 ]
             }
         ]
     },
     {
-        slug: "stationery-general-supplies",
-        name: "Stationery & General Supplies",
-        icon: "📎",
-        coverImage: "/images/covers/stationery-general-supplies.jpg",
-        description: "Corporate, hospitality and institutional stationery and consumables.",
+        slug: "stationery",
+        name: "8) STATIONERY & GENERAL SUPPLIES",
+        icon: "📝",
+        coverImage: "/images/covers/new_catalog/stationery.png",
+        description: "Essential office stationery, paper products, and general utility tools.",
         subcategories: [
             {
-                name: "Office Stationery",
+                name: "General Supplies",
                 items: [
-                    { name: "Paper & notebooks" },
-                    { name: "Pens & writing instruments" },
-                    { name: "Filing & organization" }
+                    { name: "PRINTOR COPY PAPER", image: "/images/products/new_catalog/premium-copy-paper.jpg", description: "High-bright, premium A4 printer paper for professional office use." },
+                    { name: "CALCULATOR", image: "/images/products/new_catalog/desktop-calculator.png", description: "Advanced scientific and desktop calculation devices for office and engineers." }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        slug: "sanitaryware",
+        name: "9) SANITARWARE & BATHROOM FITTINGS",
+        icon: "🛀",
+        coverImage: "/images/covers/new_catalog/sanitaryware.png",
+        description: "Premium sanitaryware and modern bathroom fittings for residential and commercial use.",
+        subcategories: [
             {
-                name: "Packaging & Labels",
+                name: "BATHROOM FITTINGS",
                 items: [
-                    { name: "Shipping supplies" },
-                    { name: "Labels & tags" },
-                    { name: "Tape & fasteners" }
-                ]
-            },
-            {
-                name: "Hospitality Stationery",
-                items: [
-                    { name: "Branded notepads" },
-                    { name: "Menu holders" },
-                    { name: "Guest forms" }
-                ]
-            },
-            {
-                name: "General Consumables",
-                items: [
-                    { name: "Cleaning supplies" },
-                    { name: "Safety PPE" },
-                    { name: "Janitorial products" }
+                    { name: "MIXER", image: "/images/products/new_catalog/bathroom-mixer.png", description: "Elegant mixers for basins and showers with precise temperature control." },
+                    { name: "BATH TUB", image: "/images/products/new_catalog/bathtub.jpg", description: "Modern and comfortable bath tubs designed for relaxation." },
+                    { name: "SHOWER", image: "/images/products/new_catalog/shower.jpg", description: "Advanced shower systems for a refreshing bathroom experience." }
                 ]
             }
         ]
     }
 ]
-
-export interface ProductItem {
-    name: string
-    image?: string
-    description?: string
-}
-
-export type Product = Omit<typeof products[0], 'subcategories'> & {
-    subcategories: {
-        name: string
-        items: ProductItem[]
-    }[]
-    coverImage?: string
-}
-export type Subcategory = Product['subcategories'][0]

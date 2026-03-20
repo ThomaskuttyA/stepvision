@@ -3,20 +3,20 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, ChevronRight, Send } from 'lucide-react'
-import InquiryForm from '@/components/InquiryForm'
+import { ArrowLeft, ChevronRight } from 'lucide-react'
 import { Product } from '@/lib/products'
+import ProductItemCard from '@/components/ProductItemCard'
+import CTABanner from '@/components/CTABanner'
 
 interface CategoryPageClientProps {
     product: Product
 }
 
 export default function CategoryPageClient({ product }: CategoryPageClientProps) {
-    console.log('CategoryPageClient rendering for:', product?.name);
     if (!product) {
-        console.error('Product is missing in CategoryPageClient');
-        return <div>Error: Product not found</div>;
+        return <div className="min-h-screen flex items-center justify-center">Product not found</div>;
     }
+
     return (
         <div className="pt-16 lg:pt-20">
             {/* Page Hero */}
@@ -28,7 +28,7 @@ export default function CategoryPageClient({ product }: CategoryPageClientProps)
                             alt={product.name}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 to-navy/40" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40" />
                     </>
                 ) : (
                     <>
@@ -38,89 +38,79 @@ export default function CategoryPageClient({ product }: CategoryPageClientProps)
                 )}
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <Link href="/products" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-6 text-sm">
-                        <ArrowLeft className="w-4 h-4" /> Back to All Products
+                    <Link href="/products" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-8 text-sm font-medium group">
+                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to All Products
                     </Link>
-                    <div className="mb-4">
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{product.name}</h1>
-                        <p className="text-white/80 text-lg max-w-2xl leading-relaxed">{product.description}</p>
+                    <div className="max-w-3xl">
+                        <motion.h1 
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight"
+                        >
+                            {product.name}
+                        </motion.h1>
+                        <motion.p 
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="text-white/80 text-lg md:text-xl leading-relaxed border-l-4 border-gold pl-6"
+                        >
+                            {product.description}
+                        </motion.p>
                     </div>
                 </div>
             </section>
 
-            {/* Subcategories */}
-            <section className="py-20 bg-gray-bg">
+            {/* Subcategories Sections */}
+            <section className="pt-24 pb-12 bg-gray-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="mb-10">
-                        <h2 className="text-2xl md:text-3xl font-bold text-navy mb-2">Product Range</h2>
-                        <p className="text-gray-600">Browse our full range of {product.name.toLowerCase()} available for export.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                    <div className="space-y-32">
                         {product.subcategories.map((sub, i) => (
-                            <div
-                                key={sub.name}
-                                className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow"
-                            >
-                                <h3 className="font-bold text-navy text-lg mb-3 flex items-center gap-2">
-                                    <div className="w-2 h-2 bg-gold rounded-full" />
-                                    {sub.name}
-                                </h3>
-                                <ul className="space-y-3">
-                                    {sub.items.map(item => (
-                                        <li key={item.name} className="flex items-start gap-3">
-                                            {item.image ? (
-                                                <div className="relative w-12 h-12 rounded-lg bg-gray-100 overflow-hidden flex-shrink-0 border border-gray-200">
-                                                    <img
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                        className="w-full h-full object-cover"
-                                                    />
-                                                </div>
-                                            ) : (
-                                                <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 border border-gray-100">
-                                                    <ChevronRight className="w-4 h-4 text-primary opacity-50" />
-                                                </div>
-                                            )}
-                                            <div className="pt-1">
-                                                <p className="text-gray-700 font-medium text-sm leading-tight">{item.name}</p>
-                                                <p className="text-xs text-gray-500 mt-0.5">{item.description || "Available for export"}</p>
-                                            </div>
-                                        </li>
+                            <div key={sub.name} className="relative">
+                                {/* Subcategory Header */}
+                                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-gray-200 pb-8">
+                                    <div className="flex items-center gap-6">
+                                        <div className="w-16 h-16 bg-navy rounded-2xl flex items-center justify-center text-gold text-2xl font-black shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500 border border-white/10">
+                                            {String(i + 1).padStart(2, '0')}
+                                        </div>
+                                        <div>
+                                            <span className="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-2 block">Category Section</span>
+                                            <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight">{sub.name}</h2>
+                                        </div>
+                                    </div>
+                                    <div className="hidden md:block">
+                                        <p className="text-gray-400 text-sm font-medium italic">
+                                            {sub.items.length} Products Available
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Products Grid */}
+                                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+                                    {sub.items.map((item, idx) => (
+                                        <ProductItemCard
+                                            key={item.name}
+                                            name={item.name}
+                                            image={item.image}
+                                            description={item.description}
+                                            index={idx}
+                                        />
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                         ))}
                     </div>
-
-                    {/* Inquiry CTA + Form */}
-                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                        <div className="grid grid-cols-1 lg:grid-cols-2">
-                            <div className="bg-primary p-10 text-white flex flex-col justify-center">
-                                <Send className="w-10 h-10 text-gold mb-4" />
-                                <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                                    Interested in {product.name}?
-                                </h2>
-                                <p className="text-white/80 leading-relaxed mb-6">
-                                    Send us your requirements and we&apos;ll provide a competitive quote within 24 hours. We handle all export documentation and freight to your destination.
-                                </p>
-                                <ul className="space-y-2">
-                                    {['Competitive pricing', 'Export documentation handled', 'Freight to Africa', '24h quote response'].map(item => (
-                                        <li key={item} className="flex items-center gap-2 text-white/90 text-sm">
-                                            <div className="w-1.5 h-1.5 bg-gold rounded-full" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="p-8 lg:p-10">
-                                <h3 className="text-xl font-bold text-navy mb-6">Send an Inquiry</h3>
-                                <InquiryForm defaultCategory={product.slug} />
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
+            
+            {/* Inquiry CTA */}
+            <CTABanner 
+                title={`Interested in ${product.name.replace(/^\d+\)\s*/, '')}?`}
+                subtitle="Send us your requirements and we'll provide a competitive quote within 24 hours. We handle all export documentation and freight to your destination."
+                buttonText="Get a Quote"
+                buttonHref="/contact"
+                variant="navy"
+            />
 
             {/* Other Categories */}
             <section className="py-16 bg-white">

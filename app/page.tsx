@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, Shield, Truck, FileCheck, Package, Globe, Award, Clock } from 'lucide-react'
-import ProductItemCard from '@/components/ProductItemCard'
-import CTABanner from '@/components/CTABanner'
 import { products } from '@/lib/products'
+import ProductCard from '@/components/ProductCard'
+import CTABanner from '@/components/CTABanner'
 
 const fadeUp = {
     initial: { opacity: 0, y: 30 },
@@ -18,46 +18,49 @@ const fadeUp = {
 
 const heroSlides = [
     {
-        image: '/images/covers/global-trade.png',
-        title: <>Your <span className="text-gold">Trusted Gateway</span> for Global Trade from <span className="text-gold">UAE to Africa</span></>,
-        titleAlt: 'Your Trusted Gateway for Global Trade from UAE to Africa',
-        description: 'Comprehensive supply chain solutions for industrial, commercial, and consumer products.'
+        image: '/images/covers/heavy-equipment-machinery.jpg',
+        title: 'One stop solution for Hotel supplies and Engineering Products',
+        description: 'Your premium gateway for global trade from UAE to Africa.'
     },
     {
-        image: '/images/covers/combined-categories.png',
-        title: <>Leading Supplier of <span className="text-gold">Building, Heavy Equipment</span>, Automotive & <span className="text-gold">Marine Products</span></>,
-        titleAlt: 'Leading Supplier of Building, Heavy Equipment, Automotive & Marine Products',
-        description: 'Your one-stop destination for high-quality industrial and engineering solutions.'
+        image: '/images/covers/building-materials-hardware.jpg',
+        title: 'Quality On Demand Building Materials & Hardware',
+        description: 'Superior construction supplies for large-scale infrastructure projects.'
+    },
+    {
+        image: '/images/covers/marine-equipment.jpg',
+        title: 'Advanced Marine & Offshore Equipment',
+        description: 'Reliable maritime solutions for international shipping and offshore operations.'
+    },
+    {
+        image: '/images/covers/automotive-spare-parts.jpg',
+        title: 'Genuine Automotive Spare Parts',
+        description: 'Comprehensive range of high-quality components for all vehicle types.'
+    },
+    {
+        image: '/images/covers/electrical-electronics.jpg',
+        title: 'Industrial Electrical & Electronics',
+        description: 'Cutting-edge technology and robust electrical systems for industrial use.'
     },
     {
         image: '/images/covers/hotel-industry-supplies.jpg',
-        title: <>One-stop solution for <span className="text-gold">Hotel supplies</span> and <span className="text-gold">Engineering Products</span></>,
-        titleAlt: 'One-stop solution for Hotel supplies and Engineering Products',
-        description: 'Premium quality equipment and supplies for hospitality and technical sectors.'
+        title: 'Premium Hotel Industry Supplies',
+        description: 'Everything you need to run a world-class hospitality business.'
     },
     {
         image: '/images/covers/it-office-products.jpg',
-        title: <>Modern <span className="text-gold">IT, Office</span> & <span className="text-gold">General Supplies</span></>,
-        titleAlt: 'Modern IT, Office & General Supplies',
-        description: 'Smart solutions and daily essentials for every business sector.'
+        title: 'Modern IT & Office Products',
+        description: 'Smart solutions for the digital workplace and corporate efficiency.'
     },
     {
-        image: '/images/covers/global-trade.png',
-        title: <>International <span className="text-gold">Logistics</span> from <span className="text-gold">UAE to Africa</span></>,
-        titleAlt: 'International Logistics from UAE to Africa',
-        description: 'Reliable and efficient shipping solutions connecting markets across continents.'
-    },
-    {
-        image: '/images/covers/yacht-repair.png',
-        title: <>Specialized <span className="text-gold">Yacht Repair</span> & <span className="text-gold">Marine Manufacturing</span></>,
-        titleAlt: 'Specialized Yacht Repair & Marine Manufacturing',
-        description: 'Expert maritime services and premium equipment for the yachting industry.'
+        image: '/images/covers/stationery-general-supplies.jpg',
+        title: 'Stationery & General Supplies',
+        description: 'Daily essentials and specialized tools for every business sector.'
     }
 ]
 
 export default function HomePage() {
     const [currentSlide, setCurrentSlide] = useState(0)
-    const [activeCategory, setActiveCategory] = useState(products[0].slug)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -79,7 +82,7 @@ export default function HomePage() {
                         <motion.img
                             key={currentSlide}
                             src={heroSlides[currentSlide].image}
-                            alt={heroSlides[currentSlide].titleAlt}
+                            alt={heroSlides[currentSlide].title}
                             className="absolute inset-0 w-full h-full object-cover"
                             initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -152,24 +155,23 @@ export default function HomePage() {
             {/* Trust Bar */}
             <section className="bg-primary py-8">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-white">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
                         {[
-                            { icon: <Clock className="w-6 h-6" />, title: '24/7 Customer Support', desc: 'Round-the-clock assistance' },
-                            { icon: <Globe className="w-6 h-6" />, title: 'Global Shipping', desc: 'Reliable worldwide delivery' },
-                            { icon: <Award className="w-6 h-6" />, title: 'Expert Consultation', desc: 'Professional technical advice' },
-                            { icon: <Shield className="w-6 h-6" />, title: 'Quality Assured', desc: 'Certified premium products' },
+                            { icon: <Globe className="w-6 h-6" />, title: 'UAE-Based Export Specialists', desc: 'Operating from UAE Free Zone with full export capabilities' },
+                            { icon: <Truck className="w-6 h-6" />, title: 'Reliable Supply Chain to Africa', desc: 'Established logistics network across 20+ African countries' },
+                            { icon: <Package className="w-6 h-6" />, title: 'Wide Range of Industrial Products', desc: 'Covering all your sourcing needs with premium quality' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
                                 {...fadeUp}
                                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                                className="flex items-center gap-4 justify-center"
+                                className="flex items-center gap-4 md:justify-center"
                             >
-                                <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                                     {item.icon}
                                 </div>
                                 <div className="text-left">
-                                    <div className="font-semibold text-sm leading-tight">{item.title}</div>
+                                    <div className="font-semibold text-sm">{item.title}</div>
                                     <div className="text-white/70 text-xs mt-0.5">{item.desc}</div>
                                 </div>
                             </motion.div>
@@ -230,7 +232,8 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-            {/* Products Grid with Tabs */}
+
+            {/* Products Grid */}
             <section className="py-24 bg-gray-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div {...fadeUp} className="text-center mb-16">
@@ -241,79 +244,18 @@ export default function HomePage() {
                         </p>
                     </motion.div>
 
-                    {/* Modern Category Tabs */}
-                    <div className="mb-16 flex justify-center">
-                        <div className="inline-flex p-1.5 bg-white/50 backdrop-blur-md rounded-2xl border border-gray-200 shadow-sm overflow-x-auto no-scrollbar max-w-full">
-                            <div className="flex gap-1 min-w-max">
-                                {products.map((cat) => (
-                                    <motion.button
-                                        key={cat.slug}
-                                        onClick={() => setActiveCategory(cat.slug)}
-                                        whileTap={{ scale: 0.95 }}
-                                        className={`relative flex items-center justify-center px-6 py-2.5 rounded-xl transition-all duration-300 text-sm font-semibold whitespace-nowrap z-10 ${activeCategory === cat.slug
-                                            ? 'text-white'
-                                            : 'text-navy/60 hover:text-navy hover:bg-gray-100/50'
-                                            }`}
-                                    >
-                                        {cat.name}
-                                        {activeCategory === cat.slug && (
-                                            <motion.div
-                                                layoutId="activeTab"
-                                                className="absolute inset-0 bg-navy rounded-xl -z-10 shadow-md"
-                                                transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
-                                            />
-                                        )}
-                                    </motion.button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Active Category Content */}
-                    <div className="min-h-[500px]">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeCategory}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.4 }}
-                                className="space-y-16"
-                            >
-                                {products
-                                    .filter((c) => c.slug === activeCategory)
-                                    .map((category) => (
-                                        <div key={category.slug} className="space-y-12">
-                                            {category.subcategories.map((sub) => {
-                                                const itemsWithImages = sub.items.filter((item) => item.image)
-                                                if (itemsWithImages.length === 0) return null
-
-                                                return (
-                                                    <div key={sub.name} className="space-y-6">
-                                                        <div className="flex items-center gap-4">
-                                                            <div className="h-px bg-gray-200 flex-grow" />
-                                                            <h4 className="text-xl font-bold text-navy/70 uppercase tracking-widest px-4">
-                                                                {sub.name}
-                                                            </h4>
-                                                            <div className="h-px bg-gray-200 flex-grow" />
-                                                        </div>
-                                                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                                                            {itemsWithImages.map((item, idx) => (
-                                                                <ProductItemCard
-                                                                    key={item.name}
-                                                                    name={item.name}
-                                                                    image={item.image}
-                                                                    index={idx}
-                                                                />
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                    ))}
-                            </motion.div>
-                        </AnimatePresence>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        {products.map((cat, i) => (
+                            <ProductCard
+                                key={cat.slug}
+                                slug={cat.slug}
+                                name={cat.name}
+                                icon={cat.icon}
+                                coverImage={cat.coverImage}
+                                description={cat.description}
+                                index={i}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

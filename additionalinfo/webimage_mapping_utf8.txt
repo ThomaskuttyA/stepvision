@@ -1,0 +1,176 @@
+TEXT: Remove  deformed  bars and move  REINFORCEMENT  Bar   in  the place of  Deformed Bars
+TEXT: Remove  structural  steel sections completely  
+IMAGE_RID: rId12
+TEXT: 1. Mild Steel Bar s 10 mm
+TEXT:  
+TEXT: Mild Steel  Round  Bar – 10mm  
+TEXT: Specification:
+TEXT: Mild Steel Square Bar, available in   various    sizes  6 to 32  mm  diameter Bottom of Form
+TEXT: 2)  Reinforcement bar
+TEXT:  Reinforcement Bar 8 mm
+TEXT: Specification:
+TEXT: Reinforcement Round  bar   available  in   various    sizes  6 to 32  mm  diameter Bottom of Form
+TEXT: 3) Flat bars  
+TEXT: Flat bars 10x 3 mm size
+TEXT: Specification:
+TEXT: Flat  bar    available in   various    sizes  10 x 3,13X3 mm,13 X 5 mm,   13 X 6 mm,16x5 mm etc
+TEXT: 4) Serrated Bar
+TEXT:   Serrated bar 20 mm x 3 mm
+TEXT: Specification:
+TEXT: Serrated bar available various sizes 3mm to 5 mm at various  depths of 20mm to 70mm .
+TEXT: Remove   Timber  instead add white  wood   &  remove Hardwood  1) White Wood 2) Plywood 3) Moisture Resistance MDF 4 )  Solid  Core Chip Board
+IMAGE_RID: rId16
+IMAGE_RID: rId17
+TEXT: White Wood    Canadian White  Wood  WXW 50
+IMAGE_RID: rId18
+TEXT: Canadian White  Wood  WXW 50
+TEXT: Specification
+TEXT: Size
+TEXT: 1'' x 2'', 1'' x 4'', 1'' x 6'', 2'' x 2'', 2'' x 3'', 2'' x 4'', 2'' x 12'', 3'' x 3'', 4'' x 4''
+TEXT: 2) Plywood 
+TEXT: Ply Wood – Hardwood 
+IMAGE_RID: rId19
+TEXT: Various type ply wood available – Bendy Plywood, Birch Plywood, Commercial plywood, Film faced plywood, Veneer  plywood  WBP  plywood
+TEXT: Moisture Resistance MDF 
+TEXT: Specification  MR MDF No soggy sagas, only style! Secret weapon: water-repelling glue, maybe a waxy dip. Pulped, pressed, prepped, ready to conquer damp.
+TEXT: Solid Core Chip Board
+TEXT:                       Solid Core Chip Board 38 mm  thickness .size   915 x 2135mm
+TEXT: Solid Core Chipboard is easy to work with and can be finished with laminates, veneers, or paint, providing a versatile solution for various desig n
+IMAGE_RID: rId20
+TEXT: Aluminum   Sectionds
+TEXT: Aluminium 40 x 20 x 1.2 mm Rectangular Hollow 5.95M
+TEXT: Specification:   hape  Form
+TEXT: Hollow
+TEXT: Shape Profile
+TEXT: Rectangular hollow profile, Rectangular Hollow Section (RHS)
+TEXT: Cross Section Dimensions
+TEXT: 0.2 CMT (height)
+TEXT: Length
+TEXT: 5.95M
+TEXT: Thickness
+TEXT: Uniform wall thickness
+TEXT: Width
+TEXT: 5 CMT
+TEXT:  GI PIPES
+IMAGE_RID: rId23
+TEXT: Strong, tough and corrosion-resistant
+TEXT: Popular choice in various applications for aesthetic appearances
+TEXT: Available sizes range from 20NB to 100NB
+TEXT: Thickness  range  from 1.2mm to 2.5mm
+TEXT: Copper Pipes
+TEXT: Copper Pipe/Tube 1/4"-6" Inch Diameter x  1' foot  Length
+TEXT: Metal Sheets
+IMAGE_RID: rId26
+TEXT: 0.8mm Thick Metal Plate 1050 Grade Aluminium Sheets
+IMAGE_RID: rId27
+TEXT: 1) keep interior paints 2) exterior  paints  3 ) Industrial Coating 4 )  Primers
+TEXT: Interior paint
+IMAGE_RID: rId28
+TEXT: J otun Fenomastic My Home Smooth Silk Base A (900 ml)
+TEXT: Brand: Jotun
+TEXT: Exterior Paint
+IMAGE_RID: rId30
+TEXT: Weathercoat  Anti Dustt  TT
+TEXT: Brand:BERGER
+TEXT: 100% acrylic emulsion exterior wall paint
+TEXT: U nique Dust Guard technology. 
+TEXT: 3) Industrial Paint    
+IMAGE_RID: rId31
+TEXT: Jotun  Penguard  Topcoat
+TEXT: Brand :  JOTUN
+TEXT: This is a 2 Component Product (A + B), 
+TEXT: Both are  Included  5 L Consists of 4 + 1 Litre 
+TEXT:  4)primers
+IMAGE_RID: rId32
+TEXT: National Paints PVA Primer White
+TEXT: Brand :National  Paints
+TEXT: Color  :White  
+TEXT: Itme   Type :  PVA Primer
+IMAGE_RID: rId33
+TEXT: Keep only
+TEXT: 1 ) Waterproofing  Material s
+TEXT: 2 ) A dhesives  & Sealants
+TEXT: Remove  (  Cement ,  sand and aggregates & Cement  Masonry )  
+TEXT: Water Proofing Materials  
+IMAGE_RID: rId34
+TEXT: S IKA LITE 
+TEXT:  Ready To Use Powdered Waterproofing 
+TEXT: Admixture For Cement/Sand Mortars and Concrete
+TEXT: 2)Adhesives &Sealants
+IMAGE_RID: rId35
+TEXT: SIKA - Universal Multipurpose Silicone Sealant 
+TEXT: For Glazing  And  Weatherproofing - Sikasil-116  Gp  Whit e
+TEXT:     
+IMAGE_RID: rId36
+TEXT: Keep only  first two items  
+TEXT: 1) Fiber Cement Board
+TEXT: 2) Gypsum Board
+TEXT: Remove  (Particle  board, Cement fibre  Board ,  Regular  Gypsum  )    use  the same   pictures for  first two option.                                                  
+TEXT: Fiber Cement Board
+TEXT: ideal for cladding, partition walls, ceilings, and facades.
+TEXT: Gypsum Board
+TEXT: S tandard Gypsum dimensions (1200 x 2400 x 12mm - 15mm) 
+TEXT:  user-friendly installation features.
+IMAGE_RID: rId37
+TEXT:  Hammers    
+TEXT: Fibre Glass nail  Hammer    450   G ramms
+TEXT: Brand :  Stanley
+IMAGE_RID: rId38
+TEXT: Wrenches    
+TEXT: Combination Wrench Set
+TEXT: Combination wrench 10 mm
+TEXT: Combination wrench 12 mm
+TEXT: Combination Wrench 14 mm
+TEXT: Brand :  Stanley
+TEXT:  
+IMAGE_RID: rId39
+TEXT: Spirit Levels   
+TEXT: Spirit Level 12" Professional 
+TEXT: Brand :UKEN
+TEXT:      
+IMAGE_RID: rId40
+TEXT: Measuring Tape
+TEXT: Stanley Measuring Tape 8M  Bimaterial
+TEXT: 8-meter length, suitable for large-scale measurements.
+TEXT: Bimaterial  build for added comfort and durability.
+TEXT: Clear, accurate markings for precise results.
+TEXT: Ideal for construction, carpentry, and industrial use.
+TEXT: Robust Stanley design ensures long-lasting performance.
+TEXT:  
+TEXT:  
+IMAGE_RID: rId41
+TEXT: Safety Equipment
+TEXT: Safety Shoe  
+TEXT:          Model # 50053-127-44
+TEXT:                   Brand :DEWALT
+TEXT: PLANE Low Cut Safety Shoes - Size  39-44 , Steel Toe, Taupe Suede, SB Rated, Oil Resistant
+IMAGE_RID: rId42
+TEXT: Combination Pliers
+TEXT: Use same image 
+TEXT: Dynagrip  Combination Plier 180MM
+TEXT: Forged carbon steel jaws and handle  provides  long  life
+TEXT: Heat treated to ensure durability and optimal performance
+TEXT: For greater reliability, induction hardened at cutting edges,
+TEXT: Induction hardened for high performance,  Ergonomically  designed
+TEXT: Stanley Tools set – REMOVE THE ITEM  – NOT REQUIRED
+IMAGE_RID: rId43
+TEXT:  
+IMAGE_RID: rId44
+TEXT: Backhoe Loaders 
+TEXT: JCB 4CX Super Backhoe Loader
+TEXT: The primary design features of the 4CX-14 SUPER backhoe loader are the four equal-sized tires which provide high ground clearance and traction, and 4-wheel steer capability for enhanced  manoeuvrability . Additionally, a host of performance, comfort, safety and efficiency enhancements enable this machine to tackle loading  operations like no other.
+IMAGE_RID: rId45
+TEXT: Compact Loader  ( delete  option  4 )
+TEXT:  
+IMAGE_RID: rId46
+IMAGE_RID: rId47
+TEXT: Remove  3 rd  &  4  th  one  ( DELETE  Tractor Units &  Ashok Leyland Truck)
+IMAGE_RID: rId48
+TEXT: Industrial Mixer
+TEXT: Imer  Multi-Mix  350 Mortar/Concrete Mixer w/Steel Drum
+TEXT: Brand :  IMER
+TEXT: Drum Capacity :12 Cu ft
+TEXT: Motor Power 1.9 hp
+IMAGE_RID: rId49
+TEXT:  
+IMAGE_RID: rId50

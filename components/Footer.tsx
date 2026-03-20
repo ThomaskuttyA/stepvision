@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Globe, Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon'
 import { products } from '@/lib/products'
 
 export default function Footer() {
@@ -25,8 +26,8 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-3">
                             <a href="https://wa.me/971568978100" target="_blank" rel="noopener noreferrer"
-                                className="w-9 h-9 bg-green-600 rounded-lg flex items-center justify-center hover:bg-green-500 transition-colors text-sm font-bold">
-                                W
+                                className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center hover:bg-green-500 transition-all text-white shadow-lg shadow-green-600/20 hover:scale-110">
+                                <WhatsAppIcon className="w-6 h-6" />
                             </a>
                         </div>
                     </div>
