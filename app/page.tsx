@@ -19,13 +19,13 @@ const fadeUp = {
 const heroSlides = [
     {
         image: '/images/covers/marine-cargo-world-map.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        title: 'Your Trusted Gateway For Global Trade From UAE To Africa',
+        description: 'We Supply Industrial , Commercial and consumer products from buiding materials and heavy machinery to electronic and hospitality supplies.'
     },
     {
         image: '/images/covers/combined-categories.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        title: 'Complete Engineering Infrastructure supply solutions',
+        description: 'From Building Materials to heavy machineries -We power Construction, Marine, Industrial and Infrastructure projects'
     },
     {
         image: '/images/covers/global-trade.png',
@@ -34,18 +34,18 @@ const heroSlides = [
     },
     {
         image: '/images/covers/industrial-solutions.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        title: 'Genuine Automotive spare parts',
+        description: 'Comprehensive range of high-quality components for all vehicle .'
     },
     {
         image: '/images/covers/yacht-repair.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        title: 'Advanced Marine & Offshore Equipment',
+        description: 'Reliable Maritime Solutions for International shipping & offshore operations.'
     },
     {
         image: '/images/covers/marine-equipment.jpg',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        title: 'Seamless Export & Logistics Management ',
+        description: 'Direct shipments from India & China '
     }
 ]
 
@@ -94,7 +94,7 @@ export default function HomePage() {
                             className="flex flex-col items-start"
                         >
                             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] max-w-4xl tracking-tight">
-                                One stop solution for <span className="text-gold">Hotel</span> supplies and <span className="text-gold">Engineering</span> Products
+                                {heroSlides[currentSlide].title}
                             </h1>
                             <p className="text-white/90 text-xl sm:text-2xl mb-12 leading-relaxed max-w-2xl font-light">
                                 {heroSlides[currentSlide].description}
@@ -243,6 +243,7 @@ export default function HomePage() {
                                 icon={cat.icon}
                                 coverImage={cat.coverImage}
                                 description={cat.description}
+                                subcategoriesCount={cat.subcategories.length}
                                 index={i}
                             />
                         ))}

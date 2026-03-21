@@ -11,9 +11,10 @@ interface ProductCardProps {
     description: string
     coverImage?: string
     index?: number
+    subcategoriesCount?: number
 }
 
-export default function ProductCard({ slug, name, icon, description, coverImage, index = 0 }: ProductCardProps) {
+export default function ProductCard({ slug, name, icon, description, coverImage, index = 0, subcategoriesCount }: ProductCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,10 +25,10 @@ export default function ProductCard({ slug, name, icon, description, coverImage,
         >
             <Link
                 href={`/products/${slug}`}
-                className="group relative block h-[380px] overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/10 hover:border-gold/50"
+                className="group relative h-[400px] overflow-hidden rounded-2xl transition-all duration-500 shadow-lg hover:shadow-2xl"
             >
-                {/* Background Image with Zoom */}
-                <div className="absolute inset-0 z-0 bg-navy">
+                {/* Background Image Container */}
+                <div className="absolute inset-0">
                     {coverImage ? (
                         <motion.img
                             src={coverImage}
@@ -37,36 +38,29 @@ export default function ProductCard({ slug, name, icon, description, coverImage,
                     ) : (
                         <div className="w-full h-full bg-navy/80" />
                     )}
-                    
-                    {/* Dynamic Overlays */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
-                    <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Bottom-heavy dark gradient for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent opacity-100 transition-opacity duration-500" />
                 </div>
 
-                {/* Content Overlay with Glassmorphism */}
-                <div className="relative z-10 h-full p-6 flex flex-col justify-end">
-                    <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-5 transform transition-all duration-500 group-hover:bg-white/15 group-hover:-translate-y-2">
-                        <div className="flex items-start justify-between gap-2">
-                            <div className="flex-1 min-w-0">
-                                <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-3xl mb-5 transition-all duration-500 group-hover:bg-gold group-hover:text-navy group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]">
-                                    <span className="transform transition-transform duration-500">{icon}</span>
-                                </div>
-                                <h3 className="font-bold text-white text-lg tracking-tight leading-tight group-hover:text-gold transition-colors">
-                                    {name}
-                                </h3>
-                                <p className="text-white/60 text-xs mt-2 line-clamp-2 leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                                    {description}
-                                </p>
-                            </div>
-                            <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm self-start group-hover:bg-gold group-hover:text-navy transition-all duration-500 flex-shrink-0">
-                                <ArrowUpRight className="w-4 h-4 text-white group-hover:text-navy" />
-                            </div>
-                        </div>
-                        
-                        {/* Explore Label */}
-                        <div className="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                            <span className="text-[10px] font-bold text-gold uppercase tracking-[0.2em]">Explore Range</span>
-                            <div className="h-[1px] bg-gold flex-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                {/* Content Section Overlay */}
+                <div className="relative z-10 h-full p-8 flex flex-col justify-end text-white">
+                    <div className="space-y-4">
+                        <h3 className="font-bold text-white text-2xl md:text-3xl tracking-tight leading-tight">
+                            {name.replace(/^\d+\)\s*/, '')}
+                        </h3>
+                        <p className="text-white/80 text-sm md:text-base line-clamp-2 leading-relaxed">
+                            {description}
+                        </p>
+                    </div>
+                    
+                    {/* Bottom Stats & Action Bar */}
+                    <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
+                        <span className="text-xs font-bold text-white/60 uppercase tracking-[0.2em]">
+                            {subcategoriesCount || 0} Subcategories
+                        </span>
+                        <div className="flex items-center gap-2 group/btn">
+                            <span className="text-xs font-bold text-gold uppercase tracking-[0.2em]">Explore</span>
+                            <ArrowUpRight className="w-5 h-5 text-gold group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                         </div>
                     </div>
                 </div>

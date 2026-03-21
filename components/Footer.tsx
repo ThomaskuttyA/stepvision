@@ -55,7 +55,7 @@ export default function Footer() {
                     </div>
 
                     {/* Products */}
-                    <div>
+                    {/* <div>
                         <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Our Products</h3>
                         <ul className="space-y-2">
                             {products.map(product => (
@@ -65,9 +65,9 @@ export default function Footer() {
                                         {product.name}
                                     </Link>
                                 </li>
-                            ))}
+                            // ))}
                         </ul>
-                    </div>
+                    </div> */}
 
                     {/* Contact */}
                     <div>
@@ -75,7 +75,7 @@ export default function Footer() {
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-400 text-sm">Stepvision International Trading FZ LLC<br />UAE (Free Zone)</span>
+                                <span className="text-gray-400 text-sm">Stepvision International Trading FZ LLC<br /></span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
