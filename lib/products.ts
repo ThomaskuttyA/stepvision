@@ -21,7 +21,7 @@ export interface Product {
 export const products: Product[] = [
     {
         slug: "building-materials",
-        name: "1) BUILDING MATERIALS & HARDWARE",
+        name: "BUILDING MATERIALS & HARDWARE",
         icon: "🏗️",
         coverImage: "/images/covers/new_catalog/steel_bars.png",
         description: "Comprehensive construction materials including steel, wood, paints, and specialized hardware.",
@@ -86,7 +86,7 @@ export const products: Product[] = [
     },
     {
         slug: "heavy-equipment",
-        name: "2) HEAVY EQUIPMENTS & MACHINARIES",
+        name: "HEAVY EQUIPMENTS & MACHINARIES",
         icon: "🚜",
         coverImage: "/images/covers/new_catalog/heavy_equipment.png",
         description: "Industrial machinery, earthmoving equipment, and specialized mixing processing units.",
@@ -127,7 +127,7 @@ export const products: Product[] = [
     },
     {
         slug: "automotive",
-        name: "3) AUTOMOTIVE & SPARE PARTS",
+        name: "AUTOMOTIVE & SPARE PARTS",
         icon: "🚗",
         coverImage: "/images/covers/new_catalog/automotive.png",
         description: "Premium vehicles, genuine spare parts, and specialized automotive components.",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     },
     {
         slug: "marine",
-        name: "4) MARINE EQUIPMENT",
+        name: "MARINE EQUIPMENT",
         icon: "⚓",
         coverImage: "/images/covers/new_catalog/marine.png",
         description: "Professional maritime gear including anchoring, electronics, and safety systems.",
@@ -237,7 +237,7 @@ export const products: Product[] = [
     },
     {
         slug: "electrical",
-        name: "5) ELECTRICAL EQUIPMENT & ELECTRONICS",
+        name: "ELECTRICAL EQUIPMENT & ELECTRONICS",
         icon: "⚡",
         coverImage: "/images/covers/new_catalog/electrical.png",
         description: "Power generation, distribution, and smart climate control solutions.",
@@ -288,7 +288,7 @@ export const products: Product[] = [
     },
     {
         slug: "hotel-supplies",
-        name: "6) HOTEL SUPPLIES",
+        name: "HOTEL SUPPLIES",
         icon: "🏨",
         coverImage: "/images/covers/new_catalog/hotel_supplies.png",
         description: "Professional hospitality supplies for dining, kitchen, and housekeeping.",
@@ -326,7 +326,7 @@ export const products: Product[] = [
     },
     {
         slug: "it-office",
-        name: "7) IT & OFFICE PRODUCTS",
+        name: "IT & OFFICE PRODUCTS",
         icon: "💻",
         coverImage: "/images/covers/new_catalog/it_office.png",
         description: "Advanced networking hardware, IT infrastructure, and modern office supplies.",
@@ -349,7 +349,7 @@ export const products: Product[] = [
     },
     {
         slug: "stationery",
-        name: "8) STATIONERY & GENERAL SUPPLIES",
+        name: "STATIONERY & GENERAL SUPPLIES",
         icon: "📝",
         coverImage: "/images/covers/new_catalog/stationery.png",
         description: "Essential office stationery, paper products, and general utility tools.",
@@ -365,7 +365,7 @@ export const products: Product[] = [
     },
     {
         slug: "sanitaryware",
-        name: "9) SANITARWARE & BATHROOM FITTINGS",
+        name: "SANITARWARE & BATHROOM FITTINGS",
         icon: "🛀",
         coverImage: "/images/covers/new_catalog/sanitaryware.png",
         description: "Premium sanitaryware and modern bathroom fittings for residential and commercial use.",

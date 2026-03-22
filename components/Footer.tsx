@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Globe, Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon'
 import { products } from '@/lib/products'
 
@@ -12,13 +13,14 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     {/* Brand */}
                     <div className="lg:col-span-1">
-                        <Link href="/" className="flex items-center gap-2 mb-4">
-                            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                                <Globe className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                                <div className="font-bold text-white text-sm leading-tight">STEPVISION</div>
-                                <div className="text-xs text-gold font-medium leading-tight">INTERNATIONAL TRADING</div>
+                        <Link href="/" className="flex items-center mb-6">
+                            <div className="relative h-14 w-60">
+                                <Image
+                                    src="/logo.jpg"
+                                    alt="Stepvision International Trading LLC"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4">
