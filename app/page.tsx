@@ -43,7 +43,7 @@ const heroSlides = [
         description: 'Reliable Maritime Solutions for International shipping & offshore operations.'
     },
     {
-        image: '/images/covers/marine-equipment.jpg',
+        image: '/images/covers/ship.png',
         title: 'Seamless Export & Logistics Management ',
         description: 'Direct shipments from India & China '
     }

@@ -38,7 +38,7 @@ export default function Navbar() {
                     <Link href="/" className="flex items-center flex-shrink-0">
                         <div className="relative h-12 w-52 md:h-14 md:w-64">
                             <Image
-                                src="/logo.jpg"
+                                src="/logo.png"
                                 alt="Stepvision International Trading LLC"
                                 fill
                                 className="object-contain"
@@ -145,7 +145,7 @@ export default function Navbar() {
                                 className={`block px-4 py-3 rounded-lg text-sm font-medium ${isActive('/about') ? 'text-gold bg-white/10' : 'text-gray-200 hover:bg-white/5'}`}>
                                 About Us
                             </Link>
-                             <div>
+                            <div>
                                 <button onClick={() => setProductsOpen(!productsOpen)}
                                     className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium text-gray-200 hover:bg-white/5">
                                     Products <ChevronDown className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
