@@ -18,7 +18,7 @@ const fadeUp = {
 
 const heroSlides = [
     {
-        image: '/images/covers/marine-cargo-world-map.png',
+        image: '/images/covers/global-trade.jpeg',
         title: 'Your Trusted Gateway For Global Trade From UAE To Africa',
         description: 'We Supply Industrial , Commercial and consumer products from buiding materials and heavy machinery to electronic and hospitality supplies.'
     },
@@ -28,9 +28,9 @@ const heroSlides = [
         description: 'From Building Materials to heavy machineries -We power Construction, Marine, Industrial and Infrastructure projects'
     },
     {
-        image: '/images/covers/global-trade.png',
-        title: 'One stop solution for Hotel supplies and Engineering Products',
-        description: 'Your premium gateway for global trade from UAE to Africa.'
+        image: '/images/covers/hotel.png',
+        title: 'Premium Hotel Industry Supplies',
+        description: 'Everything You Need To Run A World-Class Hospitality Business.'
     },
     {
         image: '/images/covers/industrial-solutions.png',
